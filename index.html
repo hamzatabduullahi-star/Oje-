@@ -35,409 +35,160 @@ img{max-width:100%;display:block}
 .container{width:90%;max-width:1200px;margin:0 auto}
 h1,h2,h3,.logo,.price-num{font-family:'Playfair Display',serif}
 
-/* ========== CURRENCY BAR ========== */
-.currency-bar{
-  background:#000;
-  border-bottom:1px solid var(--border);
-  padding:8px 0;
-}
-.currency-inner{
-  display:flex;justify-content:flex-end;align-items:center;
-  gap:8px;flex-wrap:wrap;
-}
-.currency-label{
-  font-size:0.72rem;color:var(--muted);
-  text-transform:uppercase;letter-spacing:1px;margin-right:4px;
-}
-.currency-btn{
-  background:transparent;border:1px solid var(--border);
-  color:var(--muted);padding:4px 12px;border-radius:20px;
-  font-size:0.75rem;font-weight:600;cursor:pointer;
-  transition:0.3s;font-family:inherit;
-}
+/* CURRENCY BAR */
+.currency-bar{background:#000;border-bottom:1px solid var(--border);padding:8px 0}
+.currency-inner{display:flex;justify-content:flex-end;align-items:center;gap:8px;flex-wrap:wrap}
+.currency-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px}
+.currency-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;cursor:pointer;transition:0.3s;font-family:inherit}
 .currency-btn:hover{color:#fff;border-color:var(--rose)}
-.currency-btn.active{
-  background:var(--rose);color:#000;border-color:var(--rose);
-}
+.currency-btn.active{background:var(--rose);color:#000;border-color:var(--rose)}
 
-/* ========== HEADER ========== */
-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(13,11,16,0.95);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
-  padding:14px 0;
-}
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:rgba(13,11,16,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:14px 0}
 .header-inner{display:flex;justify-content:space-between;align-items:center}
-.logo{
-  display:flex;align-items:center;gap:10px;
-  font-size:1.45rem;font-weight:700;color:var(--rose);
-}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.45rem;font-weight:700;color:var(--rose)}
 .logo i{font-size:1.5rem}
 .logo span{color:#fff;font-weight:400}
 nav{display:flex;align-items:center;gap:6px}
-nav a{
-  padding:8px 16px;border-radius:30px;font-size:0.9rem;
-  font-weight:500;color:rgba(255,255,255,0.75);transition:0.3s;
-}
+nav a{padding:8px 16px;border-radius:30px;font-size:0.9rem;font-weight:500;color:rgba(255,255,255,0.75);transition:0.3s}
 nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
-.book-btn{
-  background:var(--rose);color:#000;border:none;
-  padding:10px 22px;border-radius:30px;font-weight:600;
-  font-size:0.9rem;cursor:pointer;transition:0.3s;
-  font-family:inherit;display:flex;align-items:center;gap:8px;
-}
+.book-btn{background:var(--rose);color:#000;border:none;padding:10px 22px;border-radius:30px;font-weight:600;font-size:0.9rem;cursor:pointer;transition:0.3s;font-family:inherit;display:flex;align-items:center;gap:8px}
 .book-btn:hover{background:var(--gold2);transform:translateY(-2px)}
-.menu-toggle{
-  display:none;background:none;border:none;color:#fff;
-  font-size:1.6rem;cursor:pointer;
-}
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer}
 
-/* ========== HERO ========== */
-.hero{
-  position:relative;padding:90px 0 80px;
-  background:
-    linear-gradient(135deg,rgba(13,11,16,0.92),rgba(13,11,16,0.78)),
-    radial-gradient(circle at 20% 30%,rgba(232,180,184,0.18),transparent 60%),
-    radial-gradient(circle at 80% 70%,rgba(212,162,76,0.12),transparent 55%);
-  border-bottom:1px solid var(--border);
-  overflow:hidden;
-}
-.hero::after{
-  content:'💇‍♀️';position:absolute;right:-30px;bottom:-40px;
-  font-size:300px;opacity:0.05;pointer-events:none;
-}
+/* HERO */
+.hero{position:relative;padding:90px 0 80px;background:linear-gradient(135deg,rgba(13,11,16,0.92),rgba(13,11,16,0.78)),radial-gradient(circle at 20% 30%,rgba(232,180,184,0.18),transparent 60%),radial-gradient(circle at 80% 70%,rgba(212,162,76,0.12),transparent 55%);border-bottom:1px solid var(--border);overflow:hidden}
+.hero::after{content:'💇‍♀️';position:absolute;right:-30px;bottom:-40px;font-size:300px;opacity:0.05;pointer-events:none}
 .hero-content{max-width:660px;position:relative;z-index:1}
-.hero-tag{
-  display:inline-block;padding:6px 18px;
-  background:rgba(232,180,184,0.12);
-  border:1px solid rgba(232,180,184,0.3);
-  border-radius:30px;color:var(--rose);
-  font-size:0.78rem;font-weight:600;
-  letter-spacing:1.5px;text-transform:uppercase;
-  margin-bottom:20px;
-}
-.hero h1{
-  font-size:3.2rem;font-weight:700;
-  line-height:1.15;margin-bottom:18px;color:#fff;
-}
+.hero-tag{display:inline-block;padding:6px 18px;background:rgba(232,180,184,0.12);border:1px solid rgba(232,180,184,0.3);border-radius:30px;color:var(--rose);font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:3.2rem;font-weight:700;line-height:1.15;margin-bottom:18px;color:#fff}
 .hero h1 span{color:var(--rose);font-style:italic}
 .hero p{color:var(--muted);font-size:1.05rem;margin-bottom:32px}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 28px;border-radius:40px;font-weight:600;
-  font-size:0.95rem;cursor:pointer;transition:0.3s;
-  font-family:inherit;border:none;
-}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:40px;font-weight:600;font-size:0.95rem;cursor:pointer;transition:0.3s;font-family:inherit;border:none}
 .btn-primary{background:var(--rose);color:#000}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-3px)}
-.btn-outline{
-  background:transparent;color:#fff;
-  border:1.5px solid rgba(255,255,255,0.25);
-}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25)}
 .btn-outline:hover{border-color:var(--rose);color:var(--rose)}
-.hero-stats{
-  display:flex;gap:36px;flex-wrap:wrap;
-  margin-top:44px;padding-top:30px;
-  border-top:1px solid var(--border);
-}
-.hero-stat b{
-  display:block;font-size:1.7rem;color:var(--rose);
-  font-weight:700;font-family:'Playfair Display',serif;
-}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+.hero-stat b{display:block;font-size:1.7rem;color:var(--rose);font-weight:700;font-family:'Playfair Display',serif}
 .hero-stat span{font-size:0.8rem;color:var(--muted)}
 
-/* ========== SECTION ========== */
+/* SECTION */
 .section{padding:80px 0}
 .section-head{text-align:center;max-width:640px;margin:0 auto 50px}
-.section-tag{
-  color:var(--rose);font-size:0.78rem;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;
-}
+.section-tag{color:var(--rose);font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
 .section-head h2{font-size:2.3rem;font-weight:700;margin-bottom:10px;color:#fff}
 .section-head h2 span{color:var(--rose);font-style:italic}
 .section-head p{color:var(--muted);font-size:0.95rem}
 
-/* ========== PRICE LIST ========== */
-.price-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:24px;
-}
-.price-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:28px;
-  transition:0.3s;
-  position:relative;
-  overflow:hidden;
-}
-.price-card::before{
-  content:'';position:absolute;top:0;left:0;
-  width:4px;height:100%;background:var(--rose);opacity:0.4;
-}
-.price-card:hover{
-  border-color:rgba(232,180,184,0.4);
-  transform:translateY(-5px);
-  box-shadow:0 14px 40px rgba(0,0,0,0.4);
-}
-.price-card h3{
-  font-size:1.4rem;color:var(--rose);
-  margin-bottom:18px;font-weight:700;
-  padding-bottom:12px;
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;gap:10px;
-}
+/* PRICE LIST */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:0.3s;position:relative;overflow:hidden}
+.price-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--rose);opacity:0.4}
+.price-card:hover{border-color:rgba(232,180,184,0.4);transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,0.4)}
+.price-card h3{font-size:1.4rem;color:var(--rose);margin-bottom:18px;font-weight:700;padding-bottom:12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
 .price-card h3 i{font-size:1.1rem;opacity:0.8}
 .price-list{list-style:none}
-.price-list li{
-  display:flex;justify-content:space-between;
-  align-items:center;padding:9px 0;
-  font-size:0.93rem;
-  border-bottom:1px dashed rgba(255,255,255,0.05);
-}
+.price-list li{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:0.93rem;border-bottom:1px dashed rgba(255,255,255,0.05)}
 .price-list li:last-child{border-bottom:none}
 .price-list li span:first-child{color:var(--text)}
-.price-list li .price-val{
-  color:var(--gold2);font-weight:700;
-  font-family:'Playfair Display',serif;font-size:1rem;
-}
-.price-note{
-  margin-top:12px;font-size:0.78rem;
-  color:var(--muted);font-style:italic;
-}
+.price-list li .price-val{color:var(--gold2);font-weight:700;font-family:'Playfair Display',serif;font-size:1rem}
+.price-note{margin-top:12px;font-size:0.78rem;color:var(--muted);font-style:italic}
 
-/* ========== GALLERY ========== */
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:14px;
-}
-.gallery-item{
-  aspect-ratio:1/1;border-radius:14px;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:10px;font-size:2.2rem;color:var(--rose);
-  background:linear-gradient(145deg,#221a24,#14111a);
-  border:1px solid var(--border);
-  transition:0.3s;cursor:pointer;
-}
-.gallery-item span{
-  font-size:0.72rem;font-weight:600;
-  color:var(--text);letter-spacing:1px;text-transform:uppercase;
-}
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.gallery-item{aspect-ratio:1/1;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:2.2rem;color:var(--rose);background:linear-gradient(145deg,#221a24,#14111a);border:1px solid var(--border);transition:0.3s;cursor:pointer}
+.gallery-item span{font-size:0.72rem;font-weight:600;color:var(--text);letter-spacing:1px;text-transform:uppercase}
 .gallery-item:hover{border-color:var(--rose);transform:scale(1.03)}
 
-/* ========== WHY US ========== */
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.why-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:30px 24px;
-  text-align:center;transition:0.3s;
-}
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:30px 24px;text-align:center;transition:0.3s}
 .why-card:hover{border-color:var(--rose);transform:translateY(-6px)}
-.why-card i{
-  font-size:2rem;color:var(--rose);margin-bottom:16px;display:block;
-}
+.why-card i{font-size:2rem;color:var(--rose);margin-bottom:16px;display:block}
 .why-card h3{font-size:1.05rem;margin-bottom:8px;color:#fff;font-weight:700}
 .why-card p{font-size:0.85rem;color:var(--muted)}
 
-/* ========== INFO ========== */
+/* INFO */
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.info-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:32px;
-}
-.info-card h3{
-  color:var(--rose);font-size:1.2rem;margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;font-weight:700;
-}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
+.info-card h3{color:var(--rose);font-size:1.2rem;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-weight:700}
 .hours-list{list-style:none}
-.hours-list li{
-  display:flex;justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px dashed var(--border);
-  font-size:0.9rem;
-}
+.hours-list li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--border);font-size:0.9rem}
 .hours-list li:last-child{border-bottom:none}
 .hours-list li span:first-child{color:var(--muted)}
 .hours-list li span:last-child{color:#fff;font-weight:500}
 .hours-list li.closed span:last-child{color:#e07070}
-.location-item{
-  display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;
-}
-.location-item i{
-  color:var(--rose);font-size:1.1rem;margin-top:4px;
-}
-.location-item div strong{
-  display:block;font-size:0.95rem;margin-bottom:2px;
-  color:#fff;font-weight:600;
-}
+.location-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start}
+.location-item i{color:var(--rose);font-size:1.1rem;margin-top:4px}
+.location-item div strong{display:block;font-size:0.95rem;margin-bottom:2px;color:#fff;font-weight:600}
 .location-item div span{font-size:0.85rem;color:var(--muted)}
 
-/* ========== PAYMENT METHODS ========== */
-.payment-section{
-  background:linear-gradient(135deg,#141118,#0d0b10);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.payment-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:16px;
-}
-.payment-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:22px 16px;
-  text-align:center;
-  transition:0.3s;
-  cursor:pointer;
-  display:block;
-  color:inherit;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-}
-.payment-card::after{
-  content:'\f35d';
-  font-family:'Font Awesome 6 Free';
-  font-weight:900;
-  position:absolute;
-  top:10px;right:12px;
-  font-size:0.7rem;
-  color:var(--rose);
-  opacity:0;
-  transition:0.3s;
-}
-.payment-card:hover{
-  border-color:var(--rose);
-  transform:translateY(-4px);
-  box-shadow:0 10px 30px rgba(232,180,184,0.15);
-}
+/* PAYMENT METHODS */
+.payment-section{background:linear-gradient(135deg,#141118,#0d0b10);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.payment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.payment-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 16px;text-align:center;transition:0.3s;cursor:pointer;display:block;color:inherit;text-decoration:none;position:relative;overflow:hidden;font-family:inherit;width:100%}
+.payment-card::after{content:'\f35d';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;top:10px;right:12px;font-size:0.7rem;color:var(--rose);opacity:0;transition:0.3s}
+.payment-card:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:0 10px 30px rgba(232,180,184,0.15)}
 .payment-card:hover::after{opacity:1}
 .payment-card:active{transform:translateY(-2px) scale(0.98)}
-.payment-card i{
-  font-size:1.8rem;color:var(--rose);
-  margin-bottom:12px;display:block;
-}
-.payment-card h4{
-  font-size:0.95rem;color:#fff;
-  margin-bottom:4px;font-weight:600;
-  font-family:'Poppins',sans-serif;
-}
-.payment-card p{
-  font-size:0.75rem;color:var(--muted);
-}
-.payment-note{
-  text-align:center;margin-top:30px;
-  padding:18px;
-  background:rgba(232,180,184,0.06);
-  border:1px solid var(--border);
-  border-radius:12px;
-  font-size:0.9rem;color:var(--text);
-}
+.payment-card i{font-size:1.8rem;color:var(--rose);margin-bottom:12px;display:block}
+.payment-card h4{font-size:0.95rem;color:#fff;margin-bottom:4px;font-weight:600;font-family:'Poppins',sans-serif}
+.payment-card p{font-size:0.75rem;color:var(--muted)}
+.payment-note{text-align:center;margin-top:30px;padding:18px;background:rgba(232,180,184,0.06);border:1px solid var(--border);border-radius:12px;font-size:0.9rem;color:var(--text)}
 .payment-note strong{color:var(--rose)}
 
-/* ========== BOOKING ========== */
-.booking-section{
-  background:linear-gradient(135deg,#141118,#0d0b10);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.booking-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:44px;align-items:center;
-}
-.booking-text h2{
-  font-size:2.1rem;font-weight:700;margin-bottom:14px;color:#fff;
-}
+/* PAYMENT MODAL */
+.pay-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.pay-modal.open{display:flex}
+.pay-modal-box{background:var(--card);border:1px solid var(--rose);border-radius:var(--radius);max-width:440px;width:100%;padding:32px;position:relative;box-shadow:0 20px 60px rgba(232,180,184,0.2);animation:popIn 0.3s ease}
+@keyframes popIn{from{transform:scale(0.9);opacity:0}to{transform:scale(1);opacity:1}}
+.pay-modal-close{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;transition:0.3s;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.pay-modal-close:hover{color:var(--rose);background:rgba(232,180,184,0.1)}
+.pay-modal-icon{font-size:2.5rem;color:var(--rose);margin-bottom:12px;display:block}
+.pay-modal-box h3{color:var(--rose);font-size:1.4rem;margin-bottom:6px;font-weight:700}
+.pay-modal-box .pay-sub{color:var(--muted);font-size:0.85rem;margin-bottom:20px}
+.pay-detail-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px dashed var(--border);gap:12px;flex-wrap:wrap}
+.pay-detail-row:last-of-type{border-bottom:none}
+.pay-detail-label{font-size:0.82rem;color:var(--muted);font-weight:500}
+.pay-detail-value{font-size:0.9rem;color:#fff;font-weight:600;text-align:right;word-break:break-all;flex:1}
+.copy-btn{background:rgba(232,180,184,0.15);border:1px solid var(--rose);color:var(--rose);padding:6px 12px;border-radius:8px;font-size:0.72rem;font-weight:600;cursor:pointer;margin-left:8px;transition:0.3s;font-family:inherit}
+.copy-btn:hover{background:var(--rose);color:#000}
+.pay-modal-note{margin-top:20px;padding:14px;background:rgba(232,180,184,0.08);border-radius:10px;font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.5}
+
+/* BOOKING */
+.booking-section{background:linear-gradient(135deg,#141118,#0d0b10);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.booking-text h2{font-size:2.1rem;font-weight:700;margin-bottom:14px;color:#fff}
 .booking-text h2 span{color:var(--rose);font-style:italic}
 .booking-text p{color:var(--muted);margin-bottom:24px}
 .booking-features{list-style:none}
-.booking-features li{
-  display:flex;align-items:center;gap:10px;
-  padding:8px 0;font-size:0.9rem;
-}
+.booking-features li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:0.9rem}
 .booking-features i{color:var(--rose)}
-.booking-form{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:32px;
-}
+.booking-form{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
 .form-group{margin-bottom:14px}
-.form-group label{
-  display:block;font-size:0.82rem;color:var(--muted);
-  margin-bottom:6px;font-weight:500;
-}
-.form-group input,
-.form-group select,
-.form-group textarea{
-  width:100%;padding:12px 14px;
-  background:#0d0b10;
-  border:1px solid var(--border);
-  border-radius:10px;color:#fff;
-  font-family:inherit;font-size:0.92rem;
-  outline:none;transition:0.3s;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{border-color:var(--rose)}
+.form-group label{display:block;font-size:0.82rem;color:var(--muted);margin-bottom:6px;font-weight:500}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:#0d0b10;border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:0.92rem;outline:none;transition:0.3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--rose)}
 .form-group textarea{resize:vertical;min-height:70px}
-.submit-btn{
-  width:100%;padding:15px;
-  background:#25D366;color:#fff;
-  border:none;border-radius:10px;
-  font-weight:700;font-size:1rem;
-  cursor:pointer;transition:0.3s;font-family:inherit;
-  display:flex;align-items:center;justify-content:center;
-  gap:8px;margin-top:6px;
-}
+.submit-btn{width:100%;padding:15px;background:#25D366;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;transition:0.3s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
 .submit-btn:hover{background:#1ebe5c}
 
-/* ========== FOOTER ========== */
+/* FOOTER */
 footer{padding:50px 0 30px;border-top:1px solid var(--border)}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr;
-  gap:36px;margin-bottom:36px;
-}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:36px}
 .footer-brand .logo{margin-bottom:14px}
-.footer-brand p{
-  font-size:0.88rem;color:var(--muted);max-width:320px;
-}
-.footer-col h4{
-  font-size:0.85rem;text-transform:uppercase;
-  letter-spacing:1.5px;color:var(--rose);margin-bottom:16px;
-}
-.footer-col a,
-.footer-col p{
-  display:block;font-size:0.88rem;color:var(--muted);
-  padding:5px 0;transition:0.3s;
-}
+.footer-brand p{font-size:0.88rem;color:var(--muted);max-width:320px}
+.footer-col h4{font-size:0.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--rose);margin-bottom:16px}
+.footer-col a,.footer-col p{display:block;font-size:0.88rem;color:var(--muted);padding:5px 0;transition:0.3s}
 .footer-col a:hover{color:var(--rose)}
 .social-row{display:flex;gap:10px;margin-top:16px}
-.social-row a{
-  width:40px;height:40px;border-radius:50%;
-  background:var(--card);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--text);font-size:1rem;transition:0.3s;
-}
-.social-row a:hover{
-  background:var(--rose);color:#000;border-color:var(--rose);
-}
-.footer-bottom{
-  text-align:center;padding-top:24px;
-  border-top:1px solid var(--border);
-  font-size:0.82rem;color:var(--muted);
-}
+.social-row a{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text);font-size:1rem;transition:0.3s}
+.social-row a:hover{background:var(--rose);color:#000;border-color:var(--rose)}
+.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid var(--border);font-size:0.82rem;color:var(--muted)}
 
-/* ========== RESPONSIVE ========== */
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero h1{font-size:2.4rem}
   .info-grid{grid-template-columns:1fr}
@@ -447,14 +198,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
 @media(max-width:700px){
   .currency-inner{justify-content:center}
   .menu-toggle{display:block}
-  nav{
-    position:absolute;top:100%;left:0;right:0;
-    background:rgba(13,11,16,0.98);
-    flex-direction:column;align-items:stretch;
-    padding:16px;gap:6px;
-    border-bottom:1px solid var(--border);
-    display:none;
-  }
+  nav{position:absolute;top:100%;left:0;right:0;background:rgba(13,11,16,0.98);flex-direction:column;align-items:stretch;padding:16px;gap:6px;border-bottom:1px solid var(--border);display:none}
   nav.open{display:flex}
   nav a{padding:12px 16px;text-align:left}
   .book-btn{padding:9px 16px;font-size:0.85rem}
@@ -471,6 +215,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
   .hero-stat b{font-size:1.4rem}
   .footer-grid{grid-template-columns:1fr;gap:26px}
   .booking-form{padding:22px}
+  .pay-modal-box{padding:24px}
 }
 </style>
 </head>
@@ -546,7 +291,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
 
     <div class="price-grid">
 
-      <!-- Knotless -->
       <div class="price-card">
         <h3><i class="fa-solid fa-spa"></i> Knotless</h3>
         <ul class="price-list">
@@ -557,7 +301,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Fulani -->
       <div class="price-card">
         <h3><i class="fa-solid fa-star"></i> Fulani</h3>
         <ul class="price-list">
@@ -569,7 +312,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Natural Hair -->
       <div class="price-card">
         <h3><i class="fa-solid fa-leaf"></i> Natural Hair</h3>
         <ul class="price-list">
@@ -580,7 +322,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Bob -->
       <div class="price-card">
         <h3><i class="fa-solid fa-scissors"></i> Bob</h3>
         <ul class="price-list">
@@ -589,7 +330,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Ponytail -->
       <div class="price-card">
         <h3><i class="fa-solid fa-wind"></i> Ponytail</h3>
         <ul class="price-list">
@@ -600,7 +340,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Locs -->
       <div class="price-card">
         <h3><i class="fa-solid fa-infinity"></i> Locs</h3>
         <ul class="price-list">
@@ -612,7 +351,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Stitch Braids -->
       <div class="price-card">
         <h3><i class="fa-solid fa-grip-lines"></i> Stitch Braids</h3>
         <ul class="price-list">
@@ -621,7 +359,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         </ul>
       </div>
 
-      <!-- Extra / Add On -->
       <div class="price-card">
         <h3><i class="fa-solid fa-plus"></i> Extra / Add-On</h3>
         <ul class="price-list">
@@ -714,21 +451,21 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <i class="fa-solid fa-shop"></i>
           <div>
             <strong>Studio Address</strong>
-            <span>123 Beauty Lane,<br>Opposite Central Plaza,<br>Your City, Your State</span>
+            <span>Your address here</span>
           </div>
         </div>
         <div class="location-item">
           <i class="fa-solid fa-phone"></i>
           <div>
             <strong>Phone / WhatsApp</strong>
-            <span>+1 (000) 000-0000</span>
+            <span>Your phone number here</span>
           </div>
         </div>
         <div class="location-item">
           <i class="fa-solid fa-envelope"></i>
           <div>
             <strong>Email</strong>
-            <span>hello@royalbraids.com</span>
+            <span>Your email here</span>
           </div>
         </div>
       </div>
@@ -742,66 +479,83 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
     <div class="section-head">
       <div class="section-tag">Payment Options</div>
       <h2>Ways to <span>Pay</span></h2>
-      <p>Tap any method below to confirm your payment on WhatsApp.</p>
+      <p>Tap any method below to see payment details.</p>
     </div>
 
     <div class="payment-grid">
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('PayPal'); return false;">
+      <button class="payment-card" onclick="openPayModal('PayPal')">
         <i class="fa-brands fa-paypal"></i>
         <h4>PayPal</h4>
         <p>Secure online payment</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('Cash App'); return false;">
+      <button class="payment-card" onclick="openPayModal('Cash App')">
         <i class="fa-solid fa-dollar-sign"></i>
         <h4>Cash App</h4>
         <p>Instant transfer</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('Zelle'); return false;">
+      <button class="payment-card" onclick="openPayModal('Zelle')">
         <i class="fa-solid fa-bolt"></i>
         <h4>Zelle</h4>
         <p>Bank-to-bank</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('eTransfer'); return false;">
+      <button class="payment-card" onclick="openPayModal('eTransfer')">
         <i class="fa-solid fa-building-columns"></i>
         <h4>eTransfer</h4>
         <p>Interac / Bank</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('Apple Gift Card'); return false;">
+      <button class="payment-card" onclick="openPayModal('Apple Gift Card')">
         <i class="fa-brands fa-apple"></i>
         <h4>Apple Gift Card</h4>
         <p>Gift card payment</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('Venmo'); return false;">
+      <button class="payment-card" onclick="openPayModal('Venmo')">
         <i class="fa-solid fa-v"></i>
         <h4>Venmo</h4>
         <p>Quick & easy</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('Chime'); return false;">
+      <button class="payment-card" onclick="openPayModal('Chime')">
         <i class="fa-solid fa-wallet"></i>
         <h4>Chime</h4>
         <p>Mobile banking</p>
-      </a>
+      </button>
 
-      <a href="#" class="payment-card" onclick="payViaWhatsApp('Apple Pay'); return false;">
+      <button class="payment-card" onclick="openPayModal('Apple Pay')">
         <i class="fa-brands fa-apple"></i>
         <h4>Apple Pay</h4>
         <p>Fast & secure</p>
-      </a>
+      </button>
 
     </div>
     <div class="payment-note">
       <i class="fa-solid fa-lock" style="color:var(--rose)"></i>
-      <strong>Payment is confirmed on WhatsApp</strong> after booking. Deposit may be required for some styles.
+      <strong>Deposit may be required</strong> for some styles to secure your booking.
     </div>
   </div>
 </section>
+
+<!-- PAYMENT MODAL -->
+<div class="pay-modal" id="payModal">
+  <div class="pay-modal-box">
+    <button class="pay-modal-close" onclick="closePayModal()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <span class="pay-modal-icon" id="payIcon">💳</span>
+    <h3 id="payTitle">PayPal</h3>
+    <p class="pay-sub">Send payment to the details below:</p>
+    <div id="payDetails"></div>
+    <div class="pay-modal-note">
+      <i class="fa-solid fa-circle-info" style="color:var(--rose)"></i>
+      After payment, please send a screenshot on WhatsApp so we can confirm your booking.
+    </div>
+  </div>
+</div>
 
 <!-- BOOKING -->
 <section class="section booking-section" id="booking">
@@ -931,9 +685,9 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>123 Beauty Lane</p>
-        <p>+1 (000) 000-0000</p>
-        <p>hello@royalbraids.com</p>
+        <p>Your address here</p>
+        <p>Your phone here</p>
+        <p>Your email here</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -946,70 +700,46 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
 // ============================================
 // CURRENCY SWITCHER
 // ============================================
-const rates = {
-  USD: 1,
-  GBP: 0.79,
-  EUR: 0.92,
-  CAD: 1.34,
-  AUD: 1.50
-};
-
-const symbols = {
-  USD: '$',
-  GBP: '£',
-  EUR: '€',
-  CAD: 'CA$',
-  AUD: 'AU$'
-};
-
+const rates = { USD: 1, GBP: 0.79, EUR: 0.92, CAD: 1.34, AUD: 1.50 };
+const symbols = { USD: '$', GBP: '£', EUR: '€', CAD: 'CA$', AUD: 'AU$' };
 let currentCurrency = 'USD';
 
 function updatePrices(currency){
   currentCurrency = currency;
   const symbol = symbols[currency];
   const rate = rates[currency];
-
   document.querySelectorAll('.price').forEach(el => {
     const usd = parseFloat(el.dataset.usd);
     if (isNaN(usd)) return;
-
     const converted = usd * rate;
     const rounded = Math.round(converted);
     const isPlus = el.dataset.plus === 'true';
-
     el.textContent = symbol + rounded + (isPlus ? ' & up' : '');
   });
-
   document.querySelectorAll('.currency-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.currency === currency);
   });
-
   localStorage.setItem('braidsCurrency', currency);
 }
 
 document.querySelectorAll('.currency-btn').forEach(btn => {
-  btn.addEventListener('click', function(){
-    updatePrices(this.dataset.currency);
-  });
+  btn.addEventListener('click', function(){ updatePrices(this.dataset.currency); });
 });
 
 const savedCurrency = localStorage.getItem('braidsCurrency');
-if (savedCurrency && rates[savedCurrency]) {
-  updatePrices(savedCurrency);
-}
+if (savedCurrency && rates[savedCurrency]) updatePrices(savedCurrency);
 
 // ============================================
 // MENU + BOOKING
 // ============================================
-function toggleMenu(){
-  document.getElementById('navMenu').classList.toggle('open');
-}
+function toggleMenu(){ document.getElementById('navMenu').classList.toggle('open'); }
+function scrollToBooking(){ document.getElementById('booking').scrollIntoView({behavior:'smooth'}); }
 
-function scrollToBooking(){
-  document.getElementById('booking').scrollIntoView({behavior:'smooth'});
-}
-
-// Change this to the salon's real WhatsApp number (country code + number, no + or spaces)
+// ============================================================
+// CHANGE THIS to the salon's real WhatsApp number
+// Format: country code + number, no spaces, no +, no brackets
+// Example: 2349047974587
+// ============================================================
 const SALON_WHATSAPP = '10000000000';
 
 function bookViaWhatsApp(){
@@ -1031,24 +761,125 @@ function bookViaWhatsApp(){
   msg += '✨ *Style:* ' + service + '%0A';
   msg += '🕒 *Preferred Time:* ' + time + '%0A';
   msg += '💳 *Payment Method:* ' + payment + '%0A';
-  if(notes){
-    msg += '📝 *Notes:* ' + notes + '%0A';
-  }
+  if(notes) msg += '📝 *Notes:* ' + notes + '%0A';
   msg += '%0AThank you! 💕';
 
   window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
 }
 
-// ============================================
-// PAYMENT CARD CLICK
-// ============================================
-function payViaWhatsApp(method){
-  let msg = '💳 *PAYMENT ENQUIRY — Royal Braids Studio*%0A%0A';
-  msg += 'Hello! I would like to pay using *' + method + '*.' + '%0A';
-  msg += 'Please send me the payment details so I can complete my transaction.' + '%0A%0A';
-  msg += 'Thank you! 💕';
+// ============================================================
+// PAYMENT DETAILS
+// Fill in the real details for each payment method below.
+// Every "value" is currently set to "—" so nothing fake is shown.
+// ============================================================
+const payInfo = {
+  'PayPal': {
+    icon: 'fa-brands fa-paypal',
+    details: [
+      { label: 'PayPal Email', value: '—' },
+      { label: 'Account Name', value: '—' }
+    ]
+  },
+  'Cash App': {
+    icon: 'fa-solid fa-dollar-sign',
+    details: [
+      { label: 'Cashtag', value: '—' },
+      { label: 'Account Name', value: '—' }
+    ]
+  },
+  'Zelle': {
+    icon: 'fa-solid fa-bolt',
+    details: [
+      { label: 'Phone / Email', value: '—' },
+      { label: 'Account Name', value: '—' }
+    ]
+  },
+  'eTransfer': {
+    icon: 'fa-solid fa-building-columns',
+    details: [
+      { label: 'Email', value: '—' },
+      { label: 'Account Name', value: '—' },
+      { label: 'Security Answer', value: '—' }
+    ]
+  },
+  'Apple Gift Card': {
+    icon: 'fa-brands fa-apple',
+    details: [
+      { label: 'Send Code On WhatsApp', value: '—' },
+      { label: 'WhatsApp Number', value: '—' }
+    ]
+  },
+  'Venmo': {
+    icon: 'fa-solid fa-v',
+    details: [
+      { label: 'Venmo Username', value: '—' },
+      { label: 'Account Name', value: '—' }
+    ]
+  },
+  'Chime': {
+    icon: 'fa-solid fa-wallet',
+    details: [
+      { label: 'Chime Sign', value: '—' },
+      { label: 'Account Name', value: '—' }
+    ]
+  },
+  'Apple Pay': {
+    icon: 'fa-brands fa-apple',
+    details: [
+      { label: 'Phone / Email', value: '—' },
+      { label: 'Account Name', value: '—' }
+    ]
+  }
+};
 
-  window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
+function openPayModal(method){
+  const info = payInfo[method];
+  if(!info) return;
+
+  document.getElementById('payIcon').innerHTML = '<i class="' + info.icon + '"></i>';
+  document.getElementById('payTitle').textContent = method;
+
+  let html = '';
+  info.details.forEach(d => {
+    html += '<div class="pay-detail-row">';
+    html += '<span class="pay-detail-label">' + d.label + '</span>';
+    html += '<span class="pay-detail-value">' + d.value;
+    if(d.value && d.value !== '—'){
+      html += ' <button class="copy-btn" onclick="copyText(\'' + d.value.replace(/'/g, "\\'") + '\', this)">Copy</button>';
+    }
+    html += '</span>';
+    html += '</div>';
+  });
+  document.getElementById('payDetails').innerHTML = html;
+
+  document.getElementById('payModal').classList.add('open');
+}
+
+function closePayModal(){
+  document.getElementById('payModal').classList.remove('open');
+}
+
+document.getElementById('payModal').addEventListener('click', function(e){
+  if(e.target === this) closePayModal();
+});
+
+function copyText(text, btn){
+  if(navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => {
+      const old = btn.textContent;
+      btn.textContent = '✓ Copied';
+      setTimeout(() => btn.textContent = old, 1500);
+    });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✓ Copied';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  }
 }
 
 document.querySelectorAll('nav a').forEach(link => {
