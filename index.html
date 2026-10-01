@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Cuts — Unisex Barbing Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{
+  --bg:#0d0e12;
+  --bg2:#14161c;
+  --card:#1a1d24;
+  --gold:#d4a24c;
+  --gold2:#f0c674;
+  --text:#e8e8ea;
+  --muted:#8a8f9a;
+  --border:rgba(255,255,255,0.07);
+  --radius:16px;
+}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:90%;max-width:1200px;margin:0 auto}
+
+/* ========== HEADER ========== */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,14,18,0.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
+.header-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:700;color:var(--gold)}
+.logo i{font-size:1.5rem}
+.logo span{color:#fff;font-weight:300}
+nav{display:flex;align-items:center;gap:6px}
+nav a{
+  padding:8px 16px;border-radius:30px;font-size:0.9rem;font-weight:500;
+  color:rgba(255,255,255,0.75);transition:0.3s;
+}
+nav a:hover{color:#fff;background:rgba(212,162,76,0.1)}
+.book-btn{
+  background:var(--gold);color:#000;border:none;
+  padding:10px 22px;border-radius:30px;font-weight:600;font-size:0.9rem;
+  cursor:pointer;transition:0.3s;font-family:inherit;
+  display:flex;align-items:center;gap:8px;
+}
+.book-btn:hover{background:var(--gold2);transform:translateY(-2px)}
+.menu-toggle{
+  display:none;background:none;border:none;color:#fff;
+  font-size:1.6rem;cursor:pointer;
+}
+
+/* ========== HERO ========== */
+.hero{
+  position:relative;
+  padding:90px 0 80px;
+  background:
+    linear-gradient(135deg,rgba(13,14,18,0.92),rgba(13,14,18,0.75)),
+    radial-gradient(circle at 20% 30%,rgba(212,162,76,0.18),transparent 60%),
+    radial-gradient(circle at 80% 70%,rgba(212,162,76,0.1),transparent 55%);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.hero::after{
+  content:'✂';
+  position:absolute;
+  right:-40px;bottom:-80px;
+  font-size:340px;
+  color:rgba(212,162,76,0.05);
+  pointer-events:none;
+}
+.hero-content{max-width:640px;position:relative;z-index:1}
+.hero-tag{
+  display:inline-block;
+  padding:6px 16px;
+  background:rgba(212,162,76,0.12);
+  border:1px solid rgba(212,162,76,0.3);
+  border-radius:30px;
+  color:var(--gold);
+  font-size:0.8rem;
+  font-weight:600;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-size:3.2rem;
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:18px;
+}
+.hero h1 span{color:var(--gold)}
+.hero p{
+  color:var(--muted);
+  font-size:1.05rem;
+  margin-bottom:32px;
+}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 28px;border-radius:40px;font-weight:600;font-size:0.95rem;
+  cursor:pointer;transition:0.3s;font-family:inherit;border:none;
+}
+.btn-primary{background:var(--gold);color:#000}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-3px)}
+.btn-outline{
+  background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25);
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+.hero-stats{
+  display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;
+  padding-top:30px;border-top:1px solid var(--border);
+}
+.hero-stat b{
+  display:block;font-size:1.6rem;color:var(--gold);font-weight:700;
+}
+.hero-stat span{font-size:0.8rem;color:var(--muted)}
+
+/* ========== SECTION ========== */
+.section{padding:80px 0}
+.section-head{text-align:center;max-width:600px;margin:0 auto 50px}
+.section-tag{
+  color:var(--gold);
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.section-head h2{
+  font-size:2.2rem;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.section-head h2 span{color:var(--gold)}
+.section-head p{color:var(--muted);font-size:0.95rem}
+
+/* ========== SERVICES ========== */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+.service-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  transition:0.3s;
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(212,162,76,0.5);
+  box-shadow:0 14px 40px rgba(0,0,0,0.4);
+}
+.service-icon{
+  width:52px;height:52px;flex-shrink:0;
+  background:rgba(212,162,76,0.12);
+  border:1px solid rgba(212,162,76,0.25);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;color:var(--gold);
+}
+.service-info{flex:1}
+.service-info h3{font-size:1.05rem;margin-bottom:4px}
+.service-info p{font-size:0.82rem;color:var(--muted);margin-bottom:10px}
+.service-price{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:10px;border-top:1px dashed var(--border);
+}
+.service-price b{color:var(--gold);font-size:1.15rem;font-weight:700}
+.service-price span{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+/* ========== GALLERY ========== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;
+}
+.gallery-item{
+  aspect-ratio:1/1;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-size:2.4rem;
+  color:var(--gold);
+  background:linear-gradient(145deg,#1c1f27,#12141a);
+  border:1px solid var(--border);
+  transition:0.3s;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+.gallery-item span{
+  font-size:0.78rem;
+  font-weight:600;
+  color:var(--text);
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.gallery-item:hover{
+  border-color:var(--gold);
+  transform:scale(1.03);
+}
+.gallery-item:nth-child(1){background:linear-gradient(145deg,#2a2118,#16141a)}
+.gallery-item:nth-child(2){background:linear-gradient(145deg,#182028,#101319)}
+.gallery-item:nth-child(3){background:linear-gradient(145deg,#20181c,#141218)}
+.gallery-item:nth-child(4){background:linear-gradient(145deg,#1c2024,#101318)}
+.gallery-item:nth-child(5){background:linear-gradient(145deg,#231e16,#161310)}
+.gallery-item:nth-child(6){background:linear-gradient(145deg,#1a1e26,#10131a)}
+
+/* ========== WHY US ========== */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.why-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:30px 24px;
+  text-align:center;
+  transition:0.3s;
+}
+.why-card:hover{
+  border-color:rgba(212,162,76,0.5);
+  transform:translateY(-6px);
+}
+.why-card i{
+  font-size:2rem;color:var(--gold);margin-bottom:16px;display:block;
+}
+.why-card h3{font-size:1rem;margin-bottom:8px}
+.why-card p{font-size:0.85rem;color:var(--muted)}
+
+/* ========== INFO (HOURS + LOCATION) ========== */
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.info-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+}
+.info-card h3{
+  color:var(--gold);
+  font-size:1.15rem;
+  margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.hours-list{list-style:none}
+.hours-list li{
+  display:flex;justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px dashed var(--border);
+  font-size:0.9rem;
+}
+.hours-list li:last-child{border-bottom:none}
+.hours-list li span:first-child{color:var(--muted)}
+.hours-list li span:last-child{color:#fff;font-weight:500}
+.hours-list li.closed span:last-child{color:#e07070}
+.location-item{
+  display:flex;gap:14px;margin-bottom:18px;
+  align-items:flex-start;
+}
+.location-item i{
+  color:var(--gold);font-size:1.1rem;margin-top:4px;
+}
+.location-item div strong{display:block;font-size:0.95rem;margin-bottom:2px}
+.location-item div span{font-size:0.85rem;color:var(--muted)}
+
+/* ========== BOOKING ========== */
+.booking-section{
+  background:linear-gradient(135deg,#14161c,#0d0e12);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.booking-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:44px;
+  align-items:center;
+}
+.booking-text h2{
+  font-size:2rem;font-weight:700;margin-bottom:14px;
+}
+.booking-text h2 span{color:var(--gold)}
+.booking-text p{color:var(--muted);margin-bottom:24px}
+.booking-features{list-style:none}
+.booking-features li{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 0;font-size:0.9rem;
+}
+.booking-features i{color:var(--gold)}
+.booking-form{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+}
+.form-group{margin-bottom:14px}
+.form-group label{
+  display:block;font-size:0.82rem;color:var(--muted);
+  margin-bottom:6px;font-weight:500;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;padding:12px 14px;
+  background:#0d0e12;
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:#fff;
+  font-family:inherit;
+  font-size:0.92rem;
+  outline:none;
+  transition:0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--gold);
+}
+.form-group textarea{resize:vertical;min-height:70px}
+.submit-btn{
+  width:100%;padding:15px;
+  background:#25D366;color:#fff;
+  border:none;border-radius:10px;
+  font-weight:700;font-size:1rem;
+  cursor:pointer;transition:0.3s;
+  font-family:inherit;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:6px;
+}
+.submit-btn:hover{background:#1ebe5c}
+
+/* ========== FOOTER ========== */
+footer{
+  padding:50px 0 30px;
+  border-top:1px solid var(--border);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:36px;
+  margin-bottom:36px;
+}
+.footer-brand .logo{margin-bottom:14px}
+.footer-brand p{font-size:0.88rem;color:var(--muted);max-width:320px}
+.footer-col h4{
+  font-size:0.85rem;text-transform:uppercase;letter-spacing:1.5px;
+  color:var(--gold);margin-bottom:16px;
+}
+.footer-col a,
+.footer-col p{
+  display:block;font-size:0.88rem;color:var(--muted);
+  padding:5px 0;transition:0.3s;
+}
+.footer-col a:hover{color:var(--gold)}
+.social-row{display:flex;gap:10px;margin-top:16px}
+.social-row a{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--card);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text);font-size:1rem;
+  transition:0.3s;
+}
+.social-row a:hover{
+  background:var(--gold);color:#000;border-color:var(--gold);
+}
+.footer-bottom{
+  text-align:center;padding-top:24px;
+  border-top:1px solid var(--border);
+  font-size:0.82rem;color:var(--muted);
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+  .hero h1{font-size:2.4rem}
+  .info-grid{grid-template-columns:1fr}
+  .booking-grid{grid-template-columns:1fr;gap:32px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .menu-toggle{display:block}
+  nav{
+    position:absolute;top:100%;left:0;right:0;
+    background:rgba(13,14,18,0.98);
+    flex-direction:column;align-items:stretch;
+    padding:16px;gap:6px;
+    border-bottom:1px solid var(--border);
+    display:none;
+  }
+  nav.open{display:flex}
+  nav a{padding:12px 16px;text-align:left}
+  .book-btn{padding:9px 16px;font-size:0.85rem}
+  .header-inner{gap:8px}
+  .hero{padding:60px 0 50px}
+  .hero h1{font-size:2rem}
+  .hero::after{font-size:200px;right:-40px;bottom:-40px}
+  .section{padding:56px 0}
+  .section-head h2{font-size:1.6rem}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+  .hero-stat b{font-size:1.3rem}
+  .footer-grid{grid-template-columns:1fr;gap:26px}
+  .booking-form{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">
+      <i class="fa-solid fa-scissors"></i>
+      Royal <span>Cuts</span>
+    </a>
+    <nav id="navMenu">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#why">Why Us</a>
+      <a href="#info">Visit Us</a>
+      <button class="book-btn" onclick="scrollToBooking()">
+        <i class="fa-solid fa-calendar-check"></i> Book Now
+      </button>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-tag">Unisex Barbing Salon</span>
+      <h1>Look Sharp. <span>Feel Royal.</span></h1>
+      <p>Premium cuts, clean fades, beard styling, braids and hair care — for men, women and kids. Walk in as you are, walk out as a masterpiece.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="scrollToBooking()">
+          <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+        </button>
+        <a href="#services" class="btn btn-outline">
+          <i class="fa-solid fa-list"></i> View Services
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>5+</b><span>Years Experience</span></div>
+        <div class="hero-stat"><b>2000+</b><span>Happy Clients</span></div>
+        <div class="hero-stat"><b>4.9★</b><span>Average Rating</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Our Services</div>
+      <h2>Cuts & Styles for <span>Everyone</span></h2>
+      <p>Whether you want a classic fade or something fresh and bold, we've got you covered.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+        <div class="service-info">
+          <h3>Gents Haircut</h3>
+          <p>Fade, taper, low cut, afro trim — any style you want.</p>
+          <div class="service-price"><b>₦2,500</b><span>30 min</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="service-info">
+          <h3>Ladies Haircut & Trim</h3>
+          <p>Wash, trim, shape and style for natural or relaxed hair.</p>
+          <div class="service-price"><b>₦3,500</b><span>45 min</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <div class="service-info">
+          <h3>Beard Trim & Shape</h3>
+          <p>Clean lines, shaped edges and a fresh finish.</p>
+          <div class="service-price"><b>₦1,500</b><span>20 min</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+        <div class="service-info">
+          <h3>Clean Shave</h3>
+          <p>Close shave with hot towel treatment and aftercare balm.</p>
+          <div class="service-price"><b>₦2,000</b><span>25 min</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-child"></i></div>
+        <div class="service-info">
+          <h3>Kids Haircut</h3>
+          <p>Gentle, patient cuts for boys and girls under 12.</p>
+          <div class="service-price"><b>₦2,000</b><span>25 min</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="service-info">
+          <h3>Hair Dye & Colour</h3>
+          <p>Full colour or highlights in any shade you like.</p>
+          <div class="service-price"><b>₦6,000</b><span>1 hr 30</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-hands"></i></div>
+        <div class="service-info">
+          <h3>Braiding & Cornrows</h3>
+          <p>Neat braids, cornrows, twists and protective styles.</p>
+          <div class="service-price"><b>₦4,500</b><span>1 hr 30</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div class="service-info">
+          <h3>Wash & Blow Dry</h3>
+          <p>Deep wash with quality shampoo and professional dry.</p>
+          <div class="service-price"><b>₦2,500</b><span>30 min</span></div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><i class="fa-solid fa-leaf"></i></div>
+        <div class="service-info">
+          <h3>Hair Treatment</h3>
+          <p>Scalp care, deep conditioning and hair growth therapy.</p>
+          <div class="service-price"><b>₦7,000</b><span>1 hr</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Our Work</div>
+      <h2>A Glimpse of the <span>Shop</span></h2>
+      <p>Real photos of our styles will appear here once the owner provides them.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><i class="fa-solid fa-scissors"></i><span>Fresh Fade</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-user-tie"></i><span>Beard Shape</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-hands"></i><span>Braids</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-palette"></i><span>Colour</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Ladies Cut</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-child"></i><span>Kids Cut</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Why Choose Us</div-solid>
+      <h2>More Than Just a fa <span>Haircut</span></h2-c>
+      <p>We treat every client likeouch royalty — because you are.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="fa-solid fa-award"></i>
+        <h3>Skilled Barbers</h3>
+        <p>Trained hands with years of experience in both gents and ladies styling.</p>
+      </div>
+      <div class="why-card">
+        <i class="fa-solid fa-spray-can"></i>
+        <h3>Clean Tools</h3>
+        <p>Every tool is sanitised before use. Hygiene is non-negotiable.</p>
+      </div>
+      <div class="why-card">
+        <i class="fa"></i>
+        <h3>Relaxing Space</h3>
+        <p>Air-conditioned, comfortable chairs and a calm environment.</p>
+      </div>
+      <div class="why-card">
+        <i class="fa-solid fa-tags"></i>
+        <h3>Fair Prices</h3>
+        <p>Premium service at prices that make sense for everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO: HOURS + LOCATION -->
+<section class="section" id="info" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Visit Us</div>
+      <h2>Opening Hours & <span>Location</span></h2>
+      <p>Walk in any day — or book ahead on WhatsApp for no waiting.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3><i class="fa-solid fa-clock"></i> Opening Hours</h3>
+        <ul class="hours-list">
+          <li><span>Monday</span><span>9:00 AM — 8:00 PM</span></li>
+          <li><span>Tuesday</span><span>9:00 AM — 8:00 PM</span></li>
+          <li><span>Wednesday</span><span>9:00 AM — 8:00 PM</span></li>
+          <li><span>Thursday</span><span>9:00 AM — 8:00 PM</span></li>
+          <li><span>Friday</span><span>9:00 AM — 9:00 PM</span></li>
+          <li><span>Saturday</span><span>8:00 AM — 9:00 PM</span></li>
+          <li class="closed"><span>Sunday</span><span>Closed</span></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3><i class="fa-solid fa-location-dot"></i> Find Us</h3>
+        <div class="location-item">
+          <i class="fa-solid fa-shop"></i>
+          <div>
+            <strong>Shop Address</strong>
+            <span>123 Main Market Road,<br>Opposite Central Park,<br>Your City, Your State</span>
+          </div>
+        </div>
+        <div class="location-item">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <strong>Phone / WhatsApp</strong>
+            <span>+234 000 000 0000</span>
+          </div>
+        </div>
+        <div class="location-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <span>hello@royalcuts.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="section booking-section" id="booking">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-text">
+        <div class="section-tag">Book an Appointment</div>
+        <h2>Skip the Queue — <span>Book Ahead</span></h2>
+        <p>Fill in your details below and we'll confirm your slot instantly on WhatsApp. No waiting, no stress.</p>
+        <ul class="booking-features">
+          <li><i class="fa-solid fa-check-circle"></i> Instant WhatsApp confirmation</li>
+          <li><i class="fa-solid fa-check-circle"></i> Pick your barber and time</li>
+          <li><i class="fa-solid fa-check-circle"></i> Free reminder before your appointment</li>
+          <li><i class="fa-solid fa-check-circle"></i> Reschedule anytime, no charge</li>
+        </ul>
+      </div>
+      <div class="booking-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="bName" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="bPhone" placeholder="Your phone number">
+        </div>
+        <div class="form-group">
+          <label>Service</label>
+          <select id="bService">
+            <option>Gents Haircut</option>
+            <option>Ladies Haircut & Trim</option>
+            <option>Beard Trim & Shape</option>
+            <option>Clean Shave</option>
+            <option>Kids Haircut</option>
+            <option>Hair Dye & Colour</option>
+            <option>Braiding & Cornrows</option>
+            <option>Wash & Blow Dry</option>
+            <option>Hair Treatment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date & Time</label>
+          <input type="text" id="bTime" placeholder="e.g. Saturday 3pm">
+        </div>
+        <div class="form-group">
+          <label>Extra Notes (optional)</label>
+          <textarea id="bNotes" placeholder="Any special requests?"></textarea>
+        </div>
+        <button class="submit-btn" onclick="bookViaWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-scissors"></i>
+          Royal <span>Cuts</span>
+        </a>
+        <p>Premium unisex barbing salon. Where every cut tells a story and every client leaves feeling royal.</p>
+        <div class="social-row">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#why">Why Us</a>
+        <a href="#booking">Book Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>123 Main Market Road</p>
+        <p>+234 000 000 0000</p>
+        <p>hello@royalcuts.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Royal Cuts Unisex Salon. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Change this to the salon's real WhatsApp number (country code + number, no + or spaces)
+const SALON_WHATSAPP = '2340000000000';
+
+function toggleMenu(){
+  document.getElementById('navMenu').classList.toggle('open');
+}
+
+function scrollToBooking(){
+  document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+}
+
+function bookViaWhatsApp(){
+  const name = document.getElementById('bName').value.trim();
+  const phone = document.getElementById('bPhone').value.trim();
+  const service = document.getElementById('bService').value;
+  const time = document.getElementById('bTime').value.trim();
+  const notes = document.getElementById('bNotes').value.trim();
+
+  if(!name || !phone || !time){
+    alert('Please fill in your name, phone number and preferred time.');
+    return;
+  }
+
+  let msg = '💈 *NEW APPOINTMENT — Royal Cuts Salon*%0A%0A';
+  msg += '👤 *Name:* ' + name + '%0A';
+  msg += '📞 *Phone:* ' + phone + '%0A';
+  msg += '✂️ *Service:* ' + service + '%0A';
+  msg += '🕒 *Preferred Time:* ' + time + '%0A';
+  if(notes){
+    msg += '📝 *Notes:* ' + notes + '%0A';
+  }
+  msg += '%0AThank you!';
+
+  window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
+}
+
+// Close mobile menu when a link is tapped
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
