@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Cuts — Unisex Barbing Salon</title>
+<title>Royal Braids — Women's Hair Braiding Salon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 :root{
-  --bg:#0d0e12;
-  --bg2:#14161c;
-  --card:#1a1d24;
+  --bg:#0d0b10;
+  --bg2:#141118;
+  --card:#1a1620;
+  --rose:#e8b4b8;
+  --rose-dark:#c98b94;
   --gold:#d4a24c;
   --gold2:#f0c674;
-  --text:#e8e8ea;
-  --muted:#8a8f9a;
-  --border:rgba(255,255,255,0.07);
+  --text:#eae6ea;
+  --muted:#9a8f9a;
+  --border:rgba(232,180,184,0.12);
   --radius:16px;
 }
 body{
@@ -31,6 +33,7 @@ body{
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:90%;max-width:1200px;margin:0 auto}
+h1,h2,h3,.logo,.price-num{font-family:'Playfair Display',serif}
 
 /* ========== CURRENCY BAR ========== */
 .currency-bar{
@@ -39,61 +42,50 @@ img{max-width:100%;display:block}
   padding:8px 0;
 }
 .currency-inner{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  gap:8px;
-  flex-wrap:wrap;
+  display:flex;justify-content:flex-end;align-items:center;
+  gap:8px;flex-wrap:wrap;
 }
 .currency-label{
-  font-size:0.72rem;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-right:4px;
+  font-size:0.72rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin-right:4px;
 }
 .currency-btn{
-  background:transparent;
-  border:1px solid var(--border);
-  color:var(--muted);
-  padding:4px 12px;
-  border-radius:20px;
-  font-size:0.75rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-  font-family:inherit;
+  background:transparent;border:1px solid var(--border);
+  color:var(--muted);padding:4px 12px;border-radius:20px;
+  font-size:0.75rem;font-weight:600;cursor:pointer;
+  transition:0.3s;font-family:inherit;
 }
-.currency-btn:hover{color:#fff;border-color:rgba(212,162,76,0.5)}
+.currency-btn:hover{color:#fff;border-color:var(--rose)}
 .currency-btn.active{
-  background:var(--gold);
-  color:#000;
-  border-color:var(--gold);
+  background:var(--rose);color:#000;border-color:var(--rose);
 }
 
 /* ========== HEADER ========== */
 header{
   position:sticky;top:0;z-index:100;
-  background:rgba(13,14,18,0.94);
+  background:rgba(13,11,16,0.95);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
   padding:14px 0;
 }
 .header-inner{display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:700;color:var(--gold)}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-size:1.45rem;font-weight:700;color:var(--rose);
+}
 .logo i{font-size:1.5rem}
-.logo span{color:#fff;font-weight:300}
+.logo span{color:#fff;font-weight:400}
 nav{display:flex;align-items:center;gap:6px}
 nav a{
-  padding:8px 16px;border-radius:30px;font-size:0.9rem;font-weight:500;
-  color:rgba(255,255,255,0.75);transition:0.3s;
+  padding:8px 16px;border-radius:30px;font-size:0.9rem;
+  font-weight:500;color:rgba(255,255,255,0.75);transition:0.3s;
 }
-nav a:hover{color:#fff;background:rgba(212,162,76,0.1)}
+nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
 .book-btn{
-  background:var(--gold);color:#000;border:none;
-  padding:10px 22px;border-radius:30px;font-weight:600;font-size:0.9rem;
-  cursor:pointer;transition:0.3s;font-family:inherit;
-  display:flex;align-items:center;gap:8px;
+  background:var(--rose);color:#000;border:none;
+  padding:10px 22px;border-radius:30px;font-weight:600;
+  font-size:0.9rem;cursor:pointer;transition:0.3s;
+  font-family:inherit;display:flex;align-items:center;gap:8px;
 }
 .book-btn:hover{background:var(--gold2);transform:translateY(-2px)}
 .menu-toggle{
@@ -103,169 +95,140 @@ nav a:hover{color:#fff;background:rgba(212,162,76,0.1)}
 
 /* ========== HERO ========== */
 .hero{
-  position:relative;
-  padding:90px 0 80px;
+  position:relative;padding:90px 0 80px;
   background:
-    linear-gradient(135deg,rgba(13,14,18,0.92),rgba(13,14,18,0.75)),
-    radial-gradient(circle at 20% 30%,rgba(212,162,76,0.18),transparent 60%),
-    radial-gradient(circle at 80% 70%,rgba(212,162,76,0.1),transparent 55%);
+    linear-gradient(135deg,rgba(13,11,16,0.92),rgba(13,11,16,0.78)),
+    radial-gradient(circle at 20% 30%,rgba(232,180,184,0.18),transparent 60%),
+    radial-gradient(circle at 80% 70%,rgba(212,162,76,0.12),transparent 55%);
   border-bottom:1px solid var(--border);
   overflow:hidden;
 }
 .hero::after{
-  content:'✂';
-  position:absolute;
-  right:-40px;bottom:-80px;
-  font-size:340px;
-  color:rgba(212,162,76,0.05);
-  pointer-events:none;
+  content:'💇‍♀️';position:absolute;right:-30px;bottom:-40px;
+  font-size:300px;opacity:0.05;pointer-events:none;
 }
-.hero-content{max-width:640px;position:relative;z-index:1}
+.hero-content{max-width:660px;position:relative;z-index:1}
 .hero-tag{
-  display:inline-block;
-  padding:6px 16px;
-  background:rgba(212,162,76,0.12);
-  border:1px solid rgba(212,162,76,0.3);
-  border-radius:30px;
-  color:var(--gold);
-  font-size:0.8rem;
-  font-weight:600;
-  letter-spacing:1px;
-  text-transform:uppercase;
+  display:inline-block;padding:6px 18px;
+  background:rgba(232,180,184,0.12);
+  border:1px solid rgba(232,180,184,0.3);
+  border-radius:30px;color:var(--rose);
+  font-size:0.78rem;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
   margin-bottom:20px;
 }
 .hero h1{
-  font-size:3.2rem;
-  font-weight:800;
-  line-height:1.15;
-  margin-bottom:18px;
+  font-size:3.2rem;font-weight:700;
+  line-height:1.15;margin-bottom:18px;color:#fff;
 }
-.hero h1 span{color:var(--gold)}
-.hero p{
-  color:var(--muted);
-  font-size:1.05rem;
-  margin-bottom:32px;
-}
+.hero h1 span{color:var(--rose);font-style:italic}
+.hero p{color:var(--muted);font-size:1.05rem;margin-bottom:32px}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
 .btn{
   display:inline-flex;align-items:center;gap:10px;
-  padding:14px 28px;border-radius:40px;font-weight:600;font-size:0.95rem;
-  cursor:pointer;transition:0.3s;font-family:inherit;border:none;
+  padding:14px 28px;border-radius:40px;font-weight:600;
+  font-size:0.95rem;cursor:pointer;transition:0.3s;
+  font-family:inherit;border:none;
 }
-.btn-primary{background:var(--gold);color:#000}
+.btn-primary{background:var(--rose);color:#000}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-3px)}
 .btn-outline{
-  background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.25);
+  background:transparent;color:#fff;
+  border:1.5px solid rgba(255,255,255,0.25);
 }
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-
+.btn-outline:hover{border-color:var(--rose);color:var(--rose)}
 .hero-stats{
-  display:flex;gap:36px;flex-wrap:wrap;margin-top:44px;
-  padding-top:30px;border-top:1px solid var(--border);
+  display:flex;gap:36px;flex-wrap:wrap;
+  margin-top:44px;padding-top:30px;
+  border-top:1px solid var(--border);
 }
 .hero-stat b{
-  display:block;font-size:1.6rem;color:var(--gold);font-weight:700;
+  display:block;font-size:1.7rem;color:var(--rose);
+  font-weight:700;font-family:'Playfair Display',serif;
 }
 .hero-stat span{font-size:0.8rem;color:var(--muted)}
 
 /* ========== SECTION ========== */
 .section{padding:80px 0}
-.section-head{text-align:center;max-width:600px;margin:0 auto 50px}
+.section-head{text-align:center;max-width:640px;margin:0 auto 50px}
 .section-tag{
-  color:var(--gold);
-  font-size:0.78rem;
-  font-weight:700;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:10px;
+  color:var(--rose);font-size:0.78rem;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;
 }
-.section-head h2{
-  font-size:2.2rem;
-  font-weight:700;
-  margin-bottom:10px;
-}
-.section-head h2 span{color:var(--gold)}
+.section-head h2{font-size:2.3rem;font-weight:700;margin-bottom:10px;color:#fff}
+.section-head h2 span{color:var(--rose);font-style:italic}
 .section-head p{color:var(--muted);font-size:0.95rem}
 
-/* ========== SERVICES ========== */
-.services-grid{
+/* ========== PRICE LIST ========== */
+.price-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:24px;
 }
-.service-card{
+.price-card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:26px;
-  display:flex;
-  align-items:flex-start;
-  gap:16px;
+  padding:28px;
   transition:0.3s;
+  position:relative;
+  overflow:hidden;
 }
-.service-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(212,162,76,0.5);
+.price-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:4px;height:100%;background:var(--rose);opacity:0.4;
+}
+.price-card:hover{
+  border-color:rgba(232,180,184,0.4);
+  transform:translateY(-5px);
   box-shadow:0 14px 40px rgba(0,0,0,0.4);
 }
-.service-icon{
-  width:52px;height:52px;flex-shrink:0;
-  background:rgba(212,162,76,0.12);
-  border:1px solid rgba(212,162,76,0.25);
-  border-radius:14px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.4rem;color:var(--gold);
+.price-card h3{
+  font-size:1.4rem;color:var(--rose);
+  margin-bottom:18px;font-weight:700;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
 }
-.service-info{flex:1}
-.service-info h3{font-size:1.05rem;margin-bottom:4px}
-.service-info p{font-size:0.82rem;color:var(--muted);margin-bottom:10px}
-.service-price{
-  display:flex;justify-content:space-between;align-items:center;
-  padding-top:10px;border-top:1px dashed var(--border);
+.price-card h3 i{font-size:1.1rem;opacity:0.8}
+.price-list{list-style:none}
+.price-list li{
+  display:flex;justify-content:space-between;
+  align-items:center;padding:9px 0;
+  font-size:0.93rem;
+  border-bottom:1px dashed rgba(255,255,255,0.05);
 }
-.service-price b{color:var(--gold);font-size:1.15rem;font-weight:700}
-.service-price span{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.price-list li:last-child{border-bottom:none}
+.price-list li span:first-child{color:var(--text)}
+.price-list li .price-val{
+  color:var(--gold2);font-weight:700;
+  font-family:'Playfair Display',serif;font-size:1rem;
+}
+.price-note{
+  margin-top:12px;font-size:0.78rem;
+  color:var(--muted);font-style:italic;
+}
 
 /* ========== GALLERY ========== */
 .gallery-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:14px;
 }
 .gallery-item{
-  aspect-ratio:1/1;
-  border-radius:14px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  font-size:2.4rem;
-  color:var(--gold);
-  background:linear-gradient(145deg,#1c1f27,#12141a);
+  aspect-ratio:1/1;border-radius:14px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:10px;font-size:2.2rem;color:var(--rose);
+  background:linear-gradient(145deg,#221a24,#14111a);
   border:1px solid var(--border);
-  transition:0.3s;
-  cursor:pointer;
-  position:relative;
-  overflow:hidden;
+  transition:0.3s;cursor:pointer;
 }
 .gallery-item span{
-  font-size:0.78rem;
-  font-weight:600;
-  color:var(--text);
-  letter-spacing:1px;
-  text-transform:uppercase;
+  font-size:0.72rem;font-weight:600;
+  color:var(--text);letter-spacing:1px;text-transform:uppercase;
 }
-.gallery-item:hover{
-  border-color:var(--gold);
-  transform:scale(1.03);
-}
-.gallery-item:nth-child(1){background:linear-gradient(145deg,#2a2118,#16141a)}
-.gallery-item:nth-child(2){background:linear-gradient(145deg,#182028,#101319)}
-.gallery-item:nth-child(3){background:linear-gradient(145deg,#20181c,#141218)}
-.gallery-item:nth-child(4){background:linear-gradient(145deg,#1c2024,#101318)}
-.gallery-item:nth-child(5){background:linear-gradient(145deg,#231e16,#161310)}
-.gallery-item:nth-child(6){background:linear-gradient(145deg,#1a1e26,#10131a)}
+.gallery-item:hover{border-color:var(--rose);transform:scale(1.03)}
 
 /* ========== WHY US ========== */
 .why-grid{
@@ -274,40 +237,26 @@ nav a:hover{color:#fff;background:rgba(212,162,76,0.1)}
   gap:20px;
 }
 .why-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:30px 24px;
-  text-align:center;
-  transition:0.3s;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:30px 24px;
+  text-align:center;transition:0.3s;
 }
-.why-card:hover{
-  border-color:rgba(212,162,76,0.5);
-  transform:translateY(-6px);
-}
+.why-card:hover{border-color:var(--rose);transform:translateY(-6px)}
 .why-card i{
-  font-size:2rem;color:var(--gold);margin-bottom:16px;display:block;
+  font-size:2rem;color:var(--rose);margin-bottom:16px;display:block;
 }
-.why-card h3{font-size:1rem;margin-bottom:8px}
+.why-card h3{font-size:1.05rem;margin-bottom:8px;color:#fff;font-weight:700}
 .why-card p{font-size:0.85rem;color:var(--muted)}
 
-/* ========== INFO (HOURS + LOCATION) ========== */
-.info-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
+/* ========== INFO ========== */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .info-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:32px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:32px;
 }
 .info-card h3{
-  color:var(--gold);
-  font-size:1.15rem;
-  margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;
+  color:var(--rose);font-size:1.2rem;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;font-weight:700;
 }
 .hours-list{list-style:none}
 .hours-list li{
@@ -321,43 +270,82 @@ nav a:hover{color:#fff;background:rgba(212,162,76,0.1)}
 .hours-list li span:last-child{color:#fff;font-weight:500}
 .hours-list li.closed span:last-child{color:#e07070}
 .location-item{
-  display:flex;gap:14px;margin-bottom:18px;
-  align-items:flex-start;
+  display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;
 }
 .location-item i{
-  color:var(--gold);font-size:1.1rem;margin-top:4px;
+  color:var(--rose);font-size:1.1rem;margin-top:4px;
 }
-.location-item div strong{display:block;font-size:0.95rem;margin-bottom:2px}
+.location-item div strong{
+  display:block;font-size:0.95rem;margin-bottom:2px;
+  color:#fff;font-weight:600;
+}
 .location-item div span{font-size:0.85rem;color:var(--muted)}
+
+/* ========== PAYMENT METHODS ========== */
+.payment-section{
+  background:linear-gradient(135deg,#141118,#0d0b10);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.payment-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+}
+.payment-card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:22px 16px;
+  text-align:center;transition:0.3s;
+}
+.payment-card:hover{
+  border-color:var(--rose);transform:translateY(-4px);
+}
+.payment-card i{
+  font-size:1.8rem;color:var(--rose);
+  margin-bottom:12px;display:block;
+}
+.payment-card h4{
+  font-size:0.95rem;color:#fff;
+  margin-bottom:4px;font-weight:600;
+  font-family:'Poppins',sans-serif;
+}
+.payment-card p{
+  font-size:0.75rem;color:var(--muted);
+}
+.payment-note{
+  text-align:center;margin-top:30px;
+  padding:18px;
+  background:rgba(232,180,184,0.06);
+  border:1px solid var(--border);
+  border-radius:12px;
+  font-size:0.9rem;color:var(--text);
+}
+.payment-note strong{color:var(--rose)}
 
 /* ========== BOOKING ========== */
 .booking-section{
-  background:linear-gradient(135deg,#14161c,#0d0e12);
+  background:linear-gradient(135deg,#141118,#0d0b10);
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
 }
 .booking-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:44px;
-  align-items:center;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:44px;align-items:center;
 }
 .booking-text h2{
-  font-size:2rem;font-weight:700;margin-bottom:14px;
+  font-size:2.1rem;font-weight:700;margin-bottom:14px;color:#fff;
 }
-.booking-text h2 span{color:var(--gold)}
+.booking-text h2 span{color:var(--rose);font-style:italic}
 .booking-text p{color:var(--muted);margin-bottom:24px}
 .booking-features{list-style:none}
 .booking-features li{
   display:flex;align-items:center;gap:10px;
   padding:8px 0;font-size:0.9rem;
 }
-.booking-features i{color:var(--gold)}
+.booking-features i{color:var(--rose)}
 .booking-form{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:32px;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:32px;
 }
 .form-group{margin-bottom:14px}
 .form-group label{
@@ -368,67 +356,56 @@ nav a:hover{color:#fff;background:rgba(212,162,76,0.1)}
 .form-group select,
 .form-group textarea{
   width:100%;padding:12px 14px;
-  background:#0d0e12;
+  background:#0d0b10;
   border:1px solid var(--border);
-  border-radius:10px;
-  color:#fff;
-  font-family:inherit;
-  font-size:0.92rem;
-  outline:none;
-  transition:0.3s;
+  border-radius:10px;color:#fff;
+  font-family:inherit;font-size:0.92rem;
+  outline:none;transition:0.3s;
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus{
-  border-color:var(--gold);
-}
+.form-group textarea:focus{border-color:var(--rose)}
 .form-group textarea{resize:vertical;min-height:70px}
 .submit-btn{
   width:100%;padding:15px;
   background:#25D366;color:#fff;
   border:none;border-radius:10px;
   font-weight:700;font-size:1rem;
-  cursor:pointer;transition:0.3s;
-  font-family:inherit;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:6px;
+  cursor:pointer;transition:0.3s;font-family:inherit;
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;margin-top:6px;
 }
 .submit-btn:hover{background:#1ebe5c}
 
 /* ========== FOOTER ========== */
-footer{
-  padding:50px 0 30px;
-  border-top:1px solid var(--border);
-}
+footer{padding:50px 0 30px;border-top:1px solid var(--border)}
 .footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:36px;
-  margin-bottom:36px;
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:36px;margin-bottom:36px;
 }
 .footer-brand .logo{margin-bottom:14px}
-.footer-brand p{font-size:0.88rem;color:var(--muted);max-width:320px}
+.footer-brand p{
+  font-size:0.88rem;color:var(--muted);max-width:320px;
+}
 .footer-col h4{
-  font-size:0.85rem;text-transform:uppercase;letter-spacing:1.5px;
-  color:var(--gold);margin-bottom:16px;
+  font-size:0.85rem;text-transform:uppercase;
+  letter-spacing:1.5px;color:var(--rose);margin-bottom:16px;
 }
 .footer-col a,
 .footer-col p{
   display:block;font-size:0.88rem;color:var(--muted);
   padding:5px 0;transition:0.3s;
 }
-.footer-col a:hover{color:var(--gold)}
+.footer-col a:hover{color:var(--rose)}
 .social-row{display:flex;gap:10px;margin-top:16px}
 .social-row a{
   width:40px;height:40px;border-radius:50%;
-  background:var(--card);
-  border:1px solid var(--border);
+  background:var(--card);border:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  color:var(--text);font-size:1rem;
-  transition:0.3s;
+  color:var(--text);font-size:1rem;transition:0.3s;
 }
 .social-row a:hover{
-  background:var(--gold);color:#000;border-color:var(--gold);
+  background:var(--rose);color:#000;border-color:var(--rose);
 }
 .footer-bottom{
   text-align:center;padding-top:24px;
@@ -448,7 +425,7 @@ footer{
   .menu-toggle{display:block}
   nav{
     position:absolute;top:100%;left:0;right:0;
-    background:rgba(13,14,18,0.98);
+    background:rgba(13,11,16,0.98);
     flex-direction:column;align-items:stretch;
     padding:16px;gap:6px;
     border-bottom:1px solid var(--border);
@@ -460,14 +437,14 @@ footer{
   .header-inner{gap:8px}
   .hero{padding:60px 0 50px}
   .hero h1{font-size:2rem}
-  .hero::after{font-size:200px;right:-40px;bottom:-40px}
+  .hero::after{font-size:180px;right:-30px;bottom:-30px}
   .section{padding:56px 0}
   .section-head h2{font-size:1.6rem}
-  .services-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
   .gallery-grid{grid-template-columns:1fr 1fr}
   .why-grid{grid-template-columns:1fr}
   .hero-stats{gap:22px}
-  .hero-stat b{font-size:1.3rem}
+  .hero-stat b{font-size:1.4rem}
   .footer-grid{grid-template-columns:1fr;gap:26px}
   .booking-form{padding:22px}
 }
@@ -491,14 +468,15 @@ footer{
 <header>
   <div class="container header-inner">
     <a href="#" class="logo">
-      <i class="fa-solid fa-scissors"></i>
-      Royal <span>Cuts</span>
+      <i class="fa-solid fa-crown"></i>
+      Royal <span>Braids</span>
     </a>
     <nav id="navMenu">
-      <a href="#services">Services</a>
+      <a href="#prices">Price List</a>
       <a href="#gallery">Gallery</a>
       <a href="#why">Why Us</a>
       <a href="#info">Visit Us</a>
+      <a href="#payment">Payment</a>
       <button class="book-btn" onclick="scrollToBooking()">
         <i class="fa-solid fa-calendar-check"></i> Book Now
       </button>
@@ -513,142 +491,120 @@ footer{
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <span class="hero-tag">Unisex Barbing Salon</span>
-      <h1>Look Sharp. <span>Feel Royal.</span></h1>
-      <p>Premium cuts, clean fades, beard styling, braids and hair care — for men, women and kids. Walk in as you are, walk out as a masterpiece.</p>
+      <span class="hero-tag">✨ Women's Braiding Studio</span>
+      <h1>Beautiful Braids. <span>Flawless Finish.</span></h1>
+      <p>Expert knotless, Fulani, cornrows, locs and more — crafted just for you. Hair included for all braided styles.</p>
       <div class="hero-buttons">
         <button class="btn btn-primary" onclick="scrollToBooking()">
           <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
         </button>
-        <a href="#services" class="btn btn-outline">
-          <i class="fa-solid fa-list"></i> View Services
+        <a href="#prices" class="btn btn-outline">
+          <i class="fa-solid fa-tags"></i> View Price List
         </a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><b>5+</b><span>Years Experience</span></div>
-        <div class="hero-stat"><b>2000+</b><span>Happy Clients</span></div>
-        <div class="hero-stat"><b>4.9★</b><span>Average Rating</span></div>
+        <div class="hero-stat"><b>7+</b><span>Years Experience</span></div>
+        <div class="hero-stat"><b>3000+</b><span>Happy Clients</span></div>
+        <div class="hero-stat"><b>5.0★</b><span>Client Rating</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
+<!-- PRICE LIST -->
+<section class="section" id="prices">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag">Our Services</div>
-      <h2>Cuts & Styles for <span>Everyone</span></h2>
-      <p>Whether you want a classic fade or something fresh and bold, we've got you covered.</p>
+      <div class="section-tag">Price List</div>
+      <h2>Our Signature <span>Styles</span></h2>
+      <p>Hair included for all braided styles. Prices may vary based on length and thickness.</p>
     </div>
-    <div class="services-grid">
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
-        <div class="service-info">
-          <h3>Gents Haircut</h3>
-          <p>Fade, taper, low cut, afro trim — any style you want.</p>
-          <div class="service-price">
-            <b class="price" data-usd="15">$15</b>
-            <span>30 min</span>
-          </div>
-        </div>
+    <div class="price-grid">
+
+      <!-- Knotless -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-spa"></i> Knotless</h3>
+        <ul class="price-list">
+          <li><span>Smedium</span><span class="price-val price" data-usd="190">$190</span></li>
+          <li><span>Medium</span><span class="price-val price" data-usd="170">$170</span></li>
+          <li><span>Large</span><span class="price-val price" data-usd="150">$150</span></li>
+          <li><span>Jumbo</span><span class="price-val price" data-usd="130">$130</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-        <div class="service-info">
-          <h3>Ladies Haircut & Trim</h3>
-          <p>Wash, trim, shape and style for natural or relaxed hair.</p>
-          <div class="service-price">
-            <b class="price" data-usd="22">$22</b>
-            <span>45 min</span>
-          </div>
-        </div>
+      <!-- Fulani -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-star"></i> Fulani</h3>
+        <ul class="price-list">
+          <li><span>Sewin</span><span class="price-val price" data-usd="110">$110</span></li>
+          <li><span>Crochet</span><span class="price-val price" data-usd="100">$100</span></li>
+          <li><span>QuickWeave</span><span class="price-val price" data-usd="100">$100</span></li>
+          <li><span>Smedium Knotless</span><span class="price-val price" data-usd="160">$160</span></li>
+          <li><span>Medium Knotless</span><span class="price-val price" data-usd="140">$140</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
-        <div class="service-info">
-          <h3>Beard Trim & Shape</h3>
-          <p>Clean lines, shaped edges and a fresh finish.</p>
-          <div class="service-price">
-            <b class="price" data-usd="10">$10</b>
-            <span>20 min</span>
-          </div>
-        </div>
+      <!-- Natural Hair -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-leaf"></i> Natural Hair</h3>
+        <ul class="price-list">
+          <li><span>Cornrows</span><span class="price-val price" data-usd="60">$60</span></li>
+          <li><span>Twists</span><span class="price-val price" data-usd="60">$60</span></li>
+          <li><span>Braids</span><span class="price-val price" data-usd="60">$60</span></li>
+          <li><span>Fulani</span><span class="price-val price" data-usd="65">$65</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
-        <div class="service-info">
-          <h3>Clean Shave</h3>
-          <p>Close shave with hot towel treatment and aftercare balm.</p>
-          <div class="service-price">
-            <b class="price" data-usd="12">$12</b>
-            <span>25 min</span>
-          </div>
-        </div>
+      <!-- Bob -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-scissors"></i> Bob</h3>
+        <ul class="price-list">
+          <li><span>Smedium Knotless</span><span class="price-val price" data-usd="160">$160</span></li>
+          <li><span>Medium Knotless</span><span class="price-val price" data-usd="145">$145</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-child"></i></div>
-        <div class="service-info">
-          <h3>Kids Haircut</h3>
-          <p>Gentle, patient cuts for boys and girls under 12.</p>
-          <div class="service-price">
-            <b class="price" data-usd="12">$12</b>
-            <span>25 min</span>
-          </div>
-        </div>
+      <!-- Ponytail -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-wind"></i> Ponytail</h3>
+        <ul class="price-list">
+          <li><span>Braided</span><span class="price-val price" data-usd="100">$100</span></li>
+          <li><span>Braided Pigtails</span><span class="price-val price" data-usd="100">$100</span></li>
+          <li><span>Regular Ponytail</span><span class="price-val price" data-usd="80">$80</span></li>
+          <li><span>Regular Pigtails</span><span class="price-val price" data-usd="80">$80</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
-        <div class="service-info">
-          <h3>Hair Dye & Colour</h3>
-          <p>Full colour or highlights in any shade you like.</p>
-          <div class="service-price">
-            <b class="price" data-usd="40">$40</b>
-            <span>1 hr 30</span>
-          </div>
-        </div>
+      <!-- Locs -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-infinity"></i> Locs</h3>
+        <ul class="price-list">
+          <li><span>Retwist</span><span class="price-val price" data-usd="60" data-plus="true">$60 & up</span></li>
+          <li><span>Starter Locs</span><span class="price-val price" data-usd="40">$40</span></li>
+          <li><span>Faux Locs</span><span class="price-val price" data-usd="120" data-plus="true">$120 & up</span></li>
+          <li><span>Butterfly</span><span class="price-val price" data-usd="125" data-plus="true">$125 & up</span></li>
+          <li><span>Invisible</span><span class="price-val price" data-usd="130" data-plus="true">$130 & up</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-hands"></i></div>
-        <div class="service-info">
-          <h3>Braiding & Cornrows</h3>
-          <p>Neat braids, cornrows, twists and protective styles.</p>
-          <div class="service-price">
-            <b class="price" data-usd="30">$30</b>
-            <span>1 hr 30</span>
-          </div>
-        </div>
+      <!-- Stitch Braids -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-grip-lines"></i> Stitch Braids</h3>
+        <ul class="price-list">
+          <li><span>4 Braids</span><span class="price-val price" data-usd="90">$90</span></li>
+          <li><span>6 Braids</span><span class="price-val price" data-usd="105">$105</span></li>
+        </ul>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
-        <div class="service-info">
-          <h3>Wash & Blow Dry</h3>
-          <p>Deep wash with quality shampoo and professional dry.</p>
-          <div class="service-price">
-            <b class="price" data-usd="15">$15</b>
-            <span>30 min</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-leaf"></i></div>
-        <div class="service-info">
-          <h3>Hair Treatment</h3>
-          <p>Scalp care, deep conditioning and hair growth therapy.</p>
-          <div class="service-price">
-            <b class="price" data-usd="45">$45</b>
-            <span>1 hr</span>
-          </div>
-        </div>
+      <!-- Extra / Add On -->
+      <div class="price-card">
+        <h3><i class="fa-solid fa-plus"></i> Extra / Add-On</h3>
+        <ul class="price-list">
+          <li><span>Length past butt</span><span class="price-val price" data-usd="10">$10</span></li>
+          <li><span>Boho</span><span class="price-val price" data-usd="5">$5</span></li>
+        </ul>
+        <p class="price-note">💡 Hair is included for all braided styles.</p>
       </div>
 
     </div>
@@ -660,16 +616,16 @@ footer{
   <div class="container">
     <div class="section-head">
       <div class="section-tag">Our Work</div>
-      <h2>A Glimpse of the <span>Shop</span></h2>
-      <p>Real photos of our styles will appear here once the owner provides them.</p>
+      <h2>Braids That <span>Speak</span></h2>
+      <p>Real photos of our styles will appear here once provided by the salon.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><i class="fa-solid fa-scissors"></i><span>Fresh Fade</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-user-tie"></i><span>Beard Shape</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-hands"></i><span>Braids</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-palette"></i><span>Colour</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Ladies Cut</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-child"></i><span>Kids Cut</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-crown"></i><span>Knotless</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-star"></i><span>Fulani</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-leaf"></i><span>Cornrows</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-infinity"></i><span>Locs</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-wind"></i><span>Ponytail</span></div>
+      <div class="gallery-item"><i class="fa-solid fa-grip-lines"></i><span>Stitch Braids</span></div>
     </div>
   </div>
 </section>
@@ -679,35 +635,35 @@ footer{
   <div class="container">
     <div class="section-head">
       <div class="section-tag">Why Choose Us</div>
-      <h2>More Than Just a <span>Haircut</span></h2>
-      <p>We treat every client like royalty — because you are.</p>
+      <h2>More Than a <span>Hairstyle</span></h2>
+      <p>We treat every client like royalty — because you deserve it.</p>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <i class="fa-solid fa-award"></i>
-        <h3>Skilled Barbers</h3>
-        <p>Trained hands with years of experience in both gents and ladies styling.</p>
+        <h3>Expert Stylists</h3>
+        <p>Skilled hands with years of experience in braiding all hair types.</p>
+      </div>
+      <div class="why-card">
+        <i class="fa-solid fa-gem"></i>
+        <h3>Premium Quality</h3>
+        <p>Hair included, no hidden fees. Quality products on every style.</p>
       </div>
       <div class="why-card">
         <i class="fa-solid fa-spray-can"></i>
-        <h3>Clean Tools</h3>
-        <p>Every tool is sanitised before use. Hygiene is non-negotiable.</p>
+        <h3>Clean Environment</h3>
+        <p>Sanitised tools, comfortable chairs and a warm welcoming space.</p>
       </div>
       <div class="why-card">
-        <i class="fa-solid fa-couch"></i>
-        <h3>Relaxing Space</h3>
-        <p>Air-conditioned, comfortable chairs and a calm environment.</p>
-      </div>
-      <div class="why-card">
-        <i class="fa-solid fa-tags"></i>
-        <h3>Fair Prices</h3>
-        <p>Premium service at prices that make sense for everyone.</p>
+        <i class="fa-solid fa-clock"></i>
+        <h3>On-Time Service</h3>
+        <p>We respect your time. Book ahead and get seated right away.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INFO: HOURS + LOCATION -->
+<!-- INFO -->
 <section class="section" id="info" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container">
     <div class="section-head">
@@ -733,25 +689,91 @@ footer{
         <div class="location-item">
           <i class="fa-solid fa-shop"></i>
           <div>
-            <strong>Shop Address</strong>
-            <span>123 Main Market Road,<br>Opposite Central Park,<br>Your City, Your State</span>
+            <strong>Studio Address</strong>
+            <span>123 Beauty Lane,<br>Opposite Central Plaza,<br>Your City, Your State</span>
           </div>
         </div>
         <div class="location-item">
           <i class="fa-solid fa-phone"></i>
           <div>
             <strong>Phone / WhatsApp</strong>
-            <span>+234 000 000 0000</span>
+            <span>+1 (000) 000-0000</span>
           </div>
         </div>
         <div class="location-item">
           <i class="fa-solid fa-envelope"></i>
           <div>
             <strong>Email</strong>
-            <span>hello@royalcuts.com</span>
+            <span>hello@royalbraids.com</span>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT METHODS -->
+<section class="section payment-section" id="payment">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Payment Options</div>
+      <h2>Ways to <span>Pay</span></h2>
+      <p>Choose whichever is easiest for you — all payment options are accepted.</p>
+    </div>
+    <div class="payment-grid">
+
+      <div class="payment-card">
+        <i class="fa-brands fa-paypal"></i>
+        <h4>PayPal</h4>
+        <p>Secure online payment</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <h4>Cash App</h4>
+        <p>Instant transfer</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-solid fa-bolt"></i>
+        <h4>Zelle</h4>
+        <p>Bank-to-bank</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-solid fa-building-columns"></i>
+        <h4>eTransfer</h4>
+        <p>Interac / Bank</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-brands fa-apple"></i>
+        <h4>Apple Gift Card</h4>
+        <p>Gift card payment</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-solid fa-v"></i>
+        <h4>Venmo</h4>
+        <p>Quick & easy</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-solid fa-wallet"></i>
+        <h4>Chime</h4>
+        <p>Mobile banking</p>
+      </div>
+
+      <div class="payment-card">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <h4>Cash</h4>
+        <p>In person</p>
+      </div>
+
+    </div>
+    <div class="payment-note">
+      <i class="fa-solid fa-lock" style="color:var(--rose)"></i>
+      <strong>Payment is confirmed on WhatsApp</strong> after booking. Deposit may be required for some styles.
     </div>
   </div>
 </section>
@@ -763,11 +785,11 @@ footer{
       <div class="booking-text">
         <div class="section-tag">Book an Appointment</div>
         <h2>Skip the Queue — <span>Book Ahead</span></h2>
-        <p>Fill in your details below and we'll confirm your slot instantly on WhatsApp. No waiting, no stress.</p>
+        <p>Fill in your details and we'll confirm your slot instantly on WhatsApp. No waiting, no stress.</p>
         <ul class="booking-features">
           <li><i class="fa-solid fa-check-circle"></i> Instant WhatsApp confirmation</li>
-          <li><i class="fa-solid fa-check-circle"></i> Pick your barber and time</li>
-          <li><i class="fa-solid fa-check-circle"></i> Free reminder before your appointment</li>
+          <li><i class="fa-solid fa-check-circle"></i> Pick your style and time</li>
+          <li><i class="fa-solid fa-check-circle"></i> Free reminder before appointment</li>
           <li><i class="fa-solid fa-check-circle"></i> Reschedule anytime, no charge</li>
         </ul>
       </div>
@@ -781,22 +803,70 @@ footer{
           <input type="tel" id="bPhone" placeholder="Your phone number">
         </div>
         <div class="form-group">
-          <label>Service</label>
+          <label>Choose Style</label>
           <select id="bService">
-            <option>Gents Haircut</option>
-            <option>Ladies Haircut & Trim</option>
-            <option>Beard Trim & Shape</option>
-            <option>Clean Shave</option>
-            <option>Kids Haircut</option>
-            <option>Hair Dye & Colour</option>
-            <option>Braiding & Cornrows</option>
-            <option>Wash & Blow Dry</option>
-            <option>Hair Treatment</option>
+            <optgroup label="Knotless">
+              <option>Knotless — Smedium ($190)</option>
+              <option>Knotless — Medium ($170)</option>
+              <option>Knotless — Large ($150)</option>
+              <option>Knotless — Jumbo ($130)</option>
+            </optgroup>
+            <optgroup label="Fulani">
+              <option>Fulani — Sewin ($110)</option>
+              <option>Fulani — Crochet ($100)</option>
+              <option>Fulani — QuickWeave ($100)</option>
+              <option>Fulani — Smedium Knotless ($160)</option>
+              <option>Fulani — Medium Knotless ($140)</option>
+            </optgroup>
+            <optgroup label="Natural Hair">
+              <option>Natural Hair — Cornrows ($60)</option>
+              <option>Natural Hair — Twists ($60)</option>
+              <option>Natural Hair — Braids ($60)</option>
+              <option>Natural Hair — Fulani ($65)</option>
+            </optgroup>
+            <optgroup label="Bob">
+              <option>Bob — Smedium Knotless ($160)</option>
+              <option>Bob — Medium Knotless ($145)</option>
+            </optgroup>
+            <optgroup label="Ponytail">
+              <option>Ponytail — Braided ($100)</option>
+              <option>Ponytail — Braided Pigtails ($100)</option>
+              <option>Ponytail — Regular ($80)</option>
+              <option>Ponytail — Regular Pigtails ($80)</option>
+            </optgroup>
+            <optgroup label="Locs">
+              <option>Locs — Retwist ($60 & up)</option>
+              <option>Locs — Starter Locs ($40)</option>
+              <option>Locs — Faux Locs ($120 & up)</option>
+              <option>Locs — Butterfly ($125 & up)</option>
+              <option>Locs — Invisible ($130 & up)</option>
+            </optgroup>
+            <optgroup label="Stitch Braids">
+              <option>Stitch Braids — 4 Braids ($90)</option>
+              <option>Stitch Braids — 6 Braids ($105)</option>
+            </optgroup>
+            <optgroup label="Add On">
+              <option>Length past butt ($10)</option>
+              <option>Boho ($5)</option>
+            </optgroup>
           </select>
         </div>
         <div class="form-group">
           <label>Preferred Date & Time</label>
           <input type="text" id="bTime" placeholder="e.g. Saturday 3pm">
+        </div>
+        <div class="form-group">
+          <label>Preferred Payment Method</label>
+          <select id="bPayment">
+            <option>PayPal</option>
+            <option>Cash App</option>
+            <option>Zelle</option>
+            <option>eTransfer</option>
+            <option>Apple Gift Card</option>
+            <option>Venmo</option>
+            <option>Chime</option>
+            <option>Cash</option>
+          </select>
         </div>
         <div class="form-group">
           <label>Extra Notes (optional)</label>
@@ -816,10 +886,10 @@ footer{
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <i class="fa-solid fa-scissors"></i>
-          Royal <span>Cuts</span>
+          <i class="fa-solid fa-crown"></i>
+          Royal <span>Braids</span>
         </a>
-        <p>Premium unisex barbing salon. Where every cut tells a story and every client leaves feeling royal.</p>
+        <p>Premium women's hair braiding studio. Where every braid is a masterpiece and every client leaves feeling royal.</p>
         <div class="social-row">
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -829,20 +899,20 @@ footer{
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
-        <a href="#services">Services</a>
+        <a href="#prices">Price List</a>
         <a href="#gallery">Gallery</a>
-        <a href="#why">Why Us</a>
+        <a href="#payment">Payment</a>
         <a href="#booking">Book Now</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>123 Main Market Road</p>
-        <p>+234 000 000 0000</p>
-        <p>hello@royalcuts.com</p>
+        <p>123 Beauty Lane</p>
+        <p>+1 (000) 000-0000</p>
+        <p>hello@royalbraids.com</p>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Royal Cuts Unisex Salon. All rights reserved.
+      © 2026 Royal Braids. All rights reserved.
     </div>
   </div>
 </footer>
@@ -850,7 +920,6 @@ footer{
 <script>
 // ============================================
 // CURRENCY SWITCHER
-// Base currency is USD. Add or change rates here.
 // ============================================
 const rates = {
   USD: 1,
@@ -877,17 +946,20 @@ function updatePrices(currency){
 
   document.querySelectorAll('.price').forEach(el => {
     const usd = parseFloat(el.dataset.usd);
-    if (!isNaN(usd)) {
-      const converted = usd * rate;
-      el.textContent = symbol + converted.toFixed(0);
-    }
+    if (isNaN(usd)) return;
+
+    const converted = usd * rate;
+    const rounded = Math.round(converted);
+    const isPlus = el.dataset.plus === 'true';
+
+    el.textContent = symbol + rounded + (isPlus ? ' & up' : '');
   });
 
   document.querySelectorAll('.currency-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.currency === currency);
   });
 
-  localStorage.setItem('salonCurrency', currency);
+  localStorage.setItem('braidsCurrency', currency);
 }
 
 document.querySelectorAll('.currency-btn').forEach(btn => {
@@ -896,8 +968,7 @@ document.querySelectorAll('.currency-btn').forEach(btn => {
   });
 });
 
-// Load saved currency
-const savedCurrency = localStorage.getItem('salonCurrency');
+const savedCurrency = localStorage.getItem('braidsCurrency');
 if (savedCurrency && rates[savedCurrency]) {
   updatePrices(savedCurrency);
 }
@@ -914,13 +985,14 @@ function scrollToBooking(){
 }
 
 // Change this to the salon's real WhatsApp number (country code + number, no + or spaces)
-const SALON_WHATSAPP = '2340000000000';
+const SALON_WHATSAPP = '10000000000';
 
 function bookViaWhatsApp(){
   const name = document.getElementById('bName').value.trim();
   const phone = document.getElementById('bPhone').value.trim();
   const service = document.getElementById('bService').value;
   const time = document.getElementById('bTime').value.trim();
+  const payment = document.getElementById('bPayment').value;
   const notes = document.getElementById('bNotes').value.trim();
 
   if(!name || !phone || !time){
@@ -928,20 +1000,20 @@ function bookViaWhatsApp(){
     return;
   }
 
-  let msg = '💈 *NEW APPOINTMENT — Royal Cuts Salon*%0A%0A';
+  let msg = '💇‍♀️ *NEW BOOKING — Royal Braids Studio*%0A%0A';
   msg += '👤 *Name:* ' + name + '%0A';
   msg += '📞 *Phone:* ' + phone + '%0A';
-  msg += '✂️ *Service:* ' + service + '%0A';
+  msg += '✨ *Style:* ' + service + '%0A';
   msg += '🕒 *Preferred Time:* ' + time + '%0A';
+  msg += '💳 *Payment Method:* ' + payment + '%0A';
   if(notes){
     msg += '📝 *Notes:* ' + notes + '%0A';
   }
-  msg += '%0AThank you!';
+  msg += '%0AThank you! 💕';
 
   window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
 }
 
-// Close mobile menu when a link is tapped
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     document.getElementById('navMenu').classList.remove('open');
