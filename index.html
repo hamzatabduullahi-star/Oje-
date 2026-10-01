@@ -293,13 +293,37 @@ nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
   gap:16px;
 }
 .payment-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;padding:22px 16px;
-  text-align:center;transition:0.3s;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px 16px;
+  text-align:center;
+  transition:0.3s;
+  cursor:pointer;
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+}
+.payment-card::after{
+  content:'\f35d';
+  font-family:'Font Awesome 6 Free';
+  font-weight:900;
+  position:absolute;
+  top:10px;right:12px;
+  font-size:0.7rem;
+  color:var(--rose);
+  opacity:0;
+  transition:0.3s;
 }
 .payment-card:hover{
-  border-color:var(--rose);transform:translateY(-4px);
+  border-color:var(--rose);
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(232,180,184,0.15);
 }
+.payment-card:hover::after{opacity:1}
+.payment-card:active{transform:translateY(-2px) scale(0.98)}
 .payment-card i{
   font-size:1.8rem;color:var(--rose);
   margin-bottom:12px;display:block;
@@ -718,57 +742,58 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
     <div class="section-head">
       <div class="section-tag">Payment Options</div>
       <h2>Ways to <span>Pay</span></h2>
-      <p>Choose whichever is easiest for you — all payment options are accepted.</p>
+      <p>Tap any method below to confirm your payment on WhatsApp.</p>
     </div>
+
     <div class="payment-grid">
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('PayPal'); return false;">
         <i class="fa-brands fa-paypal"></i>
         <h4>PayPal</h4>
         <p>Secure online payment</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('Cash App'); return false;">
         <i class="fa-solid fa-dollar-sign"></i>
         <h4>Cash App</h4>
         <p>Instant transfer</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('Zelle'); return false;">
         <i class="fa-solid fa-bolt"></i>
         <h4>Zelle</h4>
         <p>Bank-to-bank</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('eTransfer'); return false;">
         <i class="fa-solid fa-building-columns"></i>
         <h4>eTransfer</h4>
         <p>Interac / Bank</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('Apple Gift Card'); return false;">
         <i class="fa-brands fa-apple"></i>
         <h4>Apple Gift Card</h4>
         <p>Gift card payment</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('Venmo'); return false;">
         <i class="fa-solid fa-v"></i>
         <h4>Venmo</h4>
         <p>Quick & easy</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('Chime'); return false;">
         <i class="fa-solid fa-wallet"></i>
         <h4>Chime</h4>
         <p>Mobile banking</p>
-      </div>
+      </a>
 
-      <div class="payment-card">
-        <i class="fa-solid fa-money-bill-wave"></i>
-        <h4>Cash</h4>
-        <p>In person</p>
-      </div>
+      <a href="#" class="payment-card" onclick="payViaWhatsApp('Apple Pay'); return false;">
+        <i class="fa-brands fa-apple"></i>
+        <h4>Apple Pay</h4>
+        <p>Fast & secure</p>
+      </a>
 
     </div>
     <div class="payment-note">
@@ -865,7 +890,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
             <option>Apple Gift Card</option>
             <option>Venmo</option>
             <option>Chime</option>
-            <option>Cash</option>
+            <option>Apple Pay</option>
           </select>
         </div>
         <div class="form-group">
@@ -1010,6 +1035,18 @@ function bookViaWhatsApp(){
     msg += '📝 *Notes:* ' + notes + '%0A';
   }
   msg += '%0AThank you! 💕';
+
+  window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
+}
+
+// ============================================
+// PAYMENT CARD CLICK
+// ============================================
+function payViaWhatsApp(method){
+  let msg = '💳 *PAYMENT ENQUIRY — Royal Braids Studio*%0A%0A';
+  msg += 'Hello! I would like to pay using *' + method + '*.' + '%0A';
+  msg += 'Please send me the payment details so I can complete my transaction.' + '%0A%0A';
+  msg += 'Thank you! 💕';
 
   window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
 }
