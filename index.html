@@ -166,8 +166,8 @@ nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:#0d0b10;border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:0.92rem;outline:none;transition:0.3s}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--rose)}
 .form-group textarea{resize:vertical;min-height:70px}
-.submit-btn{width:100%;padding:15px;background:#25D366;color:#fff;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;transition:0.3s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
-.submit-btn:hover{background:#1ebe5c}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,#0084ff,#0066cc);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;transition:0.3s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
+.submit-btn:hover{background:linear-gradient(135deg,#0077e6,#0055aa);transform:translateY(-2px)}
 
 /* FOOTER */
 footer{padding:50px 0 30px;border-top:1px solid var(--border)}
@@ -259,7 +259,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       <p>Expert knotless, Fulani, cornrows, locs and more — crafted just for you. Hair included for all braided styles.</p>
       <div class="hero-buttons">
         <button class="btn btn-primary" onclick="scrollToBooking()">
-          <i class="fa-solid fa-calendar-check"></i> Book Appointment
+          <i class="fa-solid fa-comment-dots"></i> Book Appointment
         </button>
         <a href="#prices" class="btn btn-outline">
           <i class="fa-solid fa-tags"></i> View Price List
@@ -455,6 +455,13 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
             <span>amusatmalikabidemi@gmail.com</span>
           </div>
         </div>
+        <div class="location-item">
+          <i class="fa-solid fa-comment-dots"></i>
+          <div>
+            <strong>iMessage</strong>
+            <span>Olabidemk@gmail.com</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -551,9 +558,9 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       <div class="booking-text">
         <div class="section-tag">Book an Appointment</div>
         <h2>Skip the Queue — <span>Book Ahead</span></h2>
-        <p>Fill in your details and we'll confirm your slot. No waiting, no stress.</p>
+        <p>Fill in your details and it will open your Messages app to send the booking directly to us via iMessage.</p>
         <ul class="booking-features">
-          <li><i class="fa-solid fa-check-circle"></i> Quick booking confirmation</li>
+          <li><i class="fa-solid fa-check-circle"></i> Sends directly to our iMessage</li>
           <li><i class="fa-solid fa-check-circle"></i> Pick your style and time</li>
           <li><i class="fa-solid fa-check-circle"></i> Free reminder before appointment</li>
           <li><i class="fa-solid fa-check-circle"></i> Reschedule anytime, no charge</li>
@@ -638,8 +645,8 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <label>Extra Notes (optional)</label>
           <textarea id="bNotes" placeholder="Any special requests?"></textarea>
         </div>
-        <button class="submit-btn" onclick="submitBooking()">
-          <i class="fa-solid fa-paper-plane"></i> Submit Booking
+        <button class="submit-btn" onclick="bookViaiMessage()">
+          <i class="fa-solid fa-comment-dots"></i> Send Booking via iMessage
         </button>
       </div>
     </div>
@@ -660,7 +667,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:Olabidemk@gmail.com"><i class="fa-solid fa-comment-dots"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -674,6 +681,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         <h4>Contact</h4>
         <p>North Side Houston</p>
         <p>amusatmalikabidemi@gmail.com</p>
+        <p>iMessage: Olabidemk@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -721,11 +729,14 @@ if (savedCurrency && rates[savedCurrency]) updatePrices(savedCurrency);
 function toggleMenu(){ document.getElementById('navMenu').classList.toggle('open'); }
 function scrollToBooking(){ document.getElementById('booking').scrollIntoView({behavior:'smooth'}); }
 
-/* ============================================
-   BOOKING FORM SUBMIT (no WhatsApp)
-   Shows a confirmation message on the page.
-   ============================================ */
-function submitBooking(){
+/* ============================================================
+   BOOKING → iMessage
+   Uses the sms: URL scheme which opens Messages app.
+   On iPhone, this will use iMessage for the Apple ID below.
+   ============================================================ */
+const IMESSAGE_ID = 'Olabidemk@gmail.com';
+
+function bookViaiMessage(){
   const name = document.getElementById('bName').value.trim();
   const phone = document.getElementById('bPhone').value.trim();
   const service = document.getElementById('bService').value;
@@ -738,28 +749,26 @@ function submitBooking(){
     return;
   }
 
-  // Show success message
-  alert(
-    'Booking Submitted!\n\n' +
-    'Name: ' + name + '\n' +
-    'Phone: ' + phone + '\n' +
-    'Style: ' + service + '\n' +
-    'Time: ' + time + '\n' +
-    'Payment: ' + payment + '\n\n' +
-    'We will contact you shortly at ' + phone + '.'
-  );
+  let msg = '💇‍♀️ NEW BOOKING — HTX Hairstylist\n\n';
+  msg += '👤 Name: ' + name + '\n';
+  msg += '📞 Phone: ' + phone + '\n';
+  msg += '✨ Style: ' + service + '\n';
+  msg += '🕒 Preferred Time: ' + time + '\n';
+  msg += '💳 Payment Method: ' + payment + '\n';
+  if(notes) msg += '📝 Notes: ' + notes + '\n';
+  msg += '\nThank you! 💕';
 
-  // Reset form
-  document.getElementById('bName').value = '';
-  document.getElementById('bPhone').value = '';
-  document.getElementById('bTime').value = '';
-  document.getElementById('bNotes').value = '';
+  // Encode the message for SMS/iMessage URL
+  const encodedMsg = encodeURIComponent(msg);
+
+  // sms: link — opens Messages app (iMessage on iPhone)
+  const smsURL = 'sms:' + IMESSAGE_ID + '&body=' + encodedMsg;
+
+  window.location.href = smsURL;
 }
 
 /* ============================================
-   PAYMENT MODAL — NO WHATSAPP REDIRECT
-   Just shows the details in a popup.
-   Fill in real details below when available.
+   PAYMENT MODAL — No WhatsApp redirect
    ============================================ */
 const payInfo = {
   'PayPal': {
@@ -847,12 +856,10 @@ function closePayModal(){
   document.getElementById('payModal').classList.remove('open');
 }
 
-// Close modal when clicking the dark background
 document.getElementById('payModal').addEventListener('click', function(e){
   if(e.target === this) closePayModal();
 });
 
-// Copy to clipboard
 function copyText(text, btn){
   if(navigator.clipboard) {
     navigator.clipboard.writeText(text).then(() => {
@@ -872,7 +879,6 @@ function copyText(text, btn){
   }
 }
 
-// Close mobile menu when a link is tapped
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     document.getElementById('navMenu').classList.remove('open');
