@@ -92,9 +92,8 @@ nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
 
 /* GALLERY */
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
-.gallery-item{aspect-ratio:1/1;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:2.2rem;color:var(--rose);background:linear-gradient(145deg,#221a24,#14111a);border:1px solid var(--border);transition:0.3s;cursor:pointer}
-.gallery-item span{font-size:0.72rem;font-weight:600;color:var(--text);letter-spacing:1px;text-transform:uppercase}
-.gallery-item:hover{border-color:var(--rose);transform:scale(1.03)}
+.gallery-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;border:1px solid var(--border);transition:0.3s;cursor:pointer}
+.gallery-img:hover{border-color:var(--rose);transform:scale(1.03)}
 
 /* WHY US */
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
@@ -469,15 +468,24 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
     <div class="section-head">
       <div class="section-tag">Our Work</div>
       <h2>Braids That <span>Speak</span></h2>
-      <p>Real photos of our styles will appear here once provided by the salon.</p>
+      <p>Real photos of our beautiful styles.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item"><i class="fa-solid fa-crown"></i><span>Knotless</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-star"></i><span>Fulani</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-leaf"></i><span>Cornrows</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-infinity"></i><span>Locs</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-wind"></i><span>Ponytail</span></div>
-      <div class="gallery-item"><i class="fa-solid fa-grip-lines"></i><span>Stitch Braids</span></div>
+      <img src="https://i.imgur.com/AzkJaFl.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/PSrKt9p.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/7RSQX6f.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/fkz7KWE.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/zJEqmfX.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/xEua6h9.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/uwlrYzk.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/mANjb1v.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/Y1cKYCZ.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/MktGpvR.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/b5xaGPZ.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/LMdsOHA.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/7RoZdlE.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/XZAt81N.jpeg" alt="Gallery Image" class="gallery-img">
+      <img src="https://i.imgur.com/JejdYO4.jpeg" alt="Gallery Image" class="gallery-img">
     </div>
   </div>
 </section>
@@ -559,11 +567,11 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
             <span>Olabidemk@gmail.com</span>
           </div>
         </div>
+        <!-- TELEGRAM NUMBER REMOVED HERE -->
         <div class="location-item">
           <i class="fa-brands fa-telegram"></i>
           <div>
             <strong>Telegram</strong>
-            <span>+234 70 6693 9100</span><br>
             <a href="https://t.me/htxhairstyle" target="_blank">t.me/htxhairstyle</a>
           </div>
         </div>
@@ -583,12 +591,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
 
     <div class="payment-grid">
 
-      <button class="payment-card" onclick="openPayModal('PayPal')">
-        <i class="fa-brands fa-paypal"></i>
-        <h4>PayPal</h4>
-        <p>Secure online payment</p>
-      </button>
-
       <button class="payment-card" onclick="openPayModal('Cash App')">
         <i class="fa-solid fa-dollar-sign"></i>
         <h4>Cash App</h4>
@@ -599,18 +601,6 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         <i class="fa-solid fa-bolt"></i>
         <h4>Zelle</h4>
         <p>Bank-to-bank</p>
-      </button>
-
-      <button class="payment-card" onclick="openPayModal('eTransfer')">
-        <i class="fa-solid fa-building-columns"></i>
-        <h4>eTransfer</h4>
-        <p>Interac / Bank</p>
-      </button>
-
-      <button class="payment-card" onclick="openPayModal('Apple Gift Card')">
-        <i class="fa-brands fa-apple"></i>
-        <h4>Apple Gift Card</h4>
-        <p>Gift card payment</p>
       </button>
 
       <button class="payment-card" onclick="openPayModal('Venmo')">
@@ -646,7 +636,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       <i class="fa-solid fa-xmark"></i>
     </button>
     <span class="pay-modal-icon" id="payIcon">💳</span>
-    <h3 id="payTitle">PayPal</h3>
+    <h3 id="payTitle">Payment Method</h3>
     <p class="pay-sub">Send payment to the details below:</p>
     <div id="payDetails"></div>
     <div class="pay-modal-note">
@@ -747,11 +737,8 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         <div class="form-group">
           <label>Preferred Payment Method</label>
           <select id="bPayment">
-            <option>PayPal</option>
             <option>Cash App</option>
             <option>Zelle</option>
-            <option>eTransfer</option>
-            <option>Apple Gift Card</option>
             <option>Venmo</option>
             <option>Chime</option>
             <option>Apple Pay</option>
@@ -781,9 +768,10 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <i class="fa-solid fa-comment-dots"></i> Send Booking via iMessage
         </button>
 
-        <a href="https://t.me/htxhairstyle" target="_blank" class="telegram-btn">
+        <!-- CHANGED TO BUTTON FOR JAVASCRIPT -->
+        <button class="telegram-btn" onclick="bookViaTelegram()">
           <i class="fa-brands fa-telegram"></i> Send Booking via Telegram
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -859,7 +847,7 @@ document.querySelectorAll('.currency-btn').forEach(btn => {
 });
 
 const savedCurrency = localStorage.getItem('htxCurrency');
-if (savedCurrency && rates[savedCurrency]) updatePrices(savedCurrency);
+if(savedCurrency && rates[savedCurrency]) updatePrices(savedCurrency);
 
 /* ============================================
    MENU + SMOOTH SCROLL
@@ -913,17 +901,62 @@ function bookViaiMessage(){
   window.location.href = smsURL;
 }
 
+/* ============================================================
+   BOOKING → Telegram
+   Copies the message to clipboard, then opens Telegram.
+   ============================================================ */
+function bookViaTelegram(){
+  const name = document.getElementById('bName').value.trim();
+  const phone = document.getElementById('bPhone').value.trim();
+  const service = document.getElementById('bService').value;
+  const time = document.getElementById('bTime').value.trim();
+  const payment = document.getElementById('bPayment').value;
+  const notes = document.getElementById('bNotes').value.trim();
+  const signature = document.getElementById('bSignature').value.trim();
+  const agreed = document.getElementById('bAgree').checked;
+
+  if(!name || !phone || !time){
+    alert('Please fill in your name, phone number and preferred time.');
+    return;
+  }
+  if(!signature){
+    alert('Please sign by typing your full name in the signature field.');
+    return;
+  }
+  if(!agreed){
+    alert('Please tick the box to agree to the $50 deposit requirement.');
+    return;
+  }
+
+  let msg = '💇‍♀️ NEW BOOKING — HTX Hairstylist\n\n';
+  msg += '👤 Name: ' + name + '\n';
+  msg += '📞 Phone: ' + phone + '\n';
+  msg += '✨ Style: ' + service + '\n';
+  msg += '🕒 Preferred Time: ' + time + '\n';
+  msg += '💳 Payment Method: ' + payment + '\n';
+  if(notes) msg += '📝 Notes: ' + notes + '\n';
+  msg += '✍️ Signature: ' + signature + '\n';
+  msg += '✅ Agreed to $50 deposit: Yes\n';
+  msg += '\nThank you! 💕';
+
+  // Copy to clipboard first, then open Telegram
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(msg).then(() => {
+      alert('✅ Booking details copied! \n\nTelegram will open next. Just long-press the message box, hit Paste, and hit Send!');
+      window.open('https://t.me/htxhairstyle', '_blank');
+    }).catch(err => {
+      // Fallback if clipboard fails
+      window.open('https://t.me/htxhairstyle?text=' + encodeURIComponent(msg), '_blank');
+    });
+  } else {
+    window.open('https://t.me/htxhairstyle?text=' + encodeURIComponent(msg), '_blank');
+  }
+}
+
 /* ============================================
    PAYMENT MODAL — No WhatsApp redirect
    ============================================ */
 const payInfo = {
-  'PayPal': {
-    icon: 'fa-brands fa-paypal',
-    details: [
-      { label: 'PayPal Email', value: '—' },
-      { label: 'Account Name', value: '—' }
-    ]
-  },
   'Cash App': {
     icon: 'fa-solid fa-dollar-sign',
     details: [
@@ -936,20 +969,6 @@ const payInfo = {
     details: [
       { label: 'Phone / Email', value: '—' },
       { label: 'Account Name', value: '—' }
-    ]
-  },
-  'eTransfer': {
-    icon: 'fa-solid fa-building-columns',
-    details: [
-      { label: 'Email', value: '—' },
-      { label: 'Account Name', value: '—' },
-      { label: 'Security Answer', value: '—' }
-    ]
-  },
-  'Apple Gift Card': {
-    icon: 'fa-brands fa-apple',
-    details: [
-      { label: 'Send Code Via Email', value: 'amusatmalikabidemi@gmail.com' }
     ]
   },
   'Venmo': {
