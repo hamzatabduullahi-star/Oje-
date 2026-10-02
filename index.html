@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Braids — Women's Hair Braiding Salon</title>
+<title>HTX Hairstylist — Women's Hair Braiding Salon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
@@ -23,17 +23,11 @@
   --border:rgba(232,180,184,0.12);
   --radius:16px;
 }
-body{
-  font-family:'Poppins',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  overflow-x:hidden;
-}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:90%;max-width:1200px;margin:0 auto}
-h1,h2,h3,.logo,.price-num{font-family:'Playfair Display',serif}
+h1,h2,h3,.logo{font-family:'Playfair Display',serif}
 
 /* CURRENCY BAR */
 .currency-bar{background:#000;border-bottom:1px solid var(--border);padding:8px 0}
@@ -46,7 +40,7 @@ h1,h2,h3,.logo,.price-num{font-family:'Playfair Display',serif}
 /* HEADER */
 header{position:sticky;top:0;z-index:100;background:rgba(13,11,16,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:14px 0}
 .header-inner{display:flex;justify-content:space-between;align-items:center}
-.logo{display:flex;align-items:center;gap:10px;font-size:1.45rem;font-weight:700;color:var(--rose)}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:700;color:var(--rose)}
 .logo i{font-size:1.5rem}
 .logo span{color:#fff;font-weight:400}
 nav{display:flex;align-items:center;gap:6px}
@@ -238,7 +232,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
   <div class="container header-inner">
     <a href="#" class="logo">
       <i class="fa-solid fa-crown"></i>
-      Royal <span>Braids</span>
+      HTX <span>Hairstylist</span>
     </a>
     <nav id="navMenu">
       <a href="#prices">Price List</a>
@@ -265,7 +259,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       <p>Expert knotless, Fulani, cornrows, locs and more — crafted just for you. Hair included for all braided styles.</p>
       <div class="hero-buttons">
         <button class="btn btn-primary" onclick="scrollToBooking()">
-          <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+          <i class="fa-solid fa-calendar-check"></i> Book Appointment
         </button>
         <a href="#prices" class="btn btn-outline">
           <i class="fa-solid fa-tags"></i> View Price List
@@ -430,7 +424,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
     <div class="section-head">
       <div class="section-tag">Visit Us</div>
       <h2>Opening Hours & <span>Location</span></h2>
-      <p>Walk in any day — or book ahead on WhatsApp for no waiting.</p>
+      <p>Walk in any day — or book ahead to secure your spot.</p>
     </div>
     <div class="info-grid">
       <div class="info-card">
@@ -450,22 +444,15 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         <div class="location-item">
           <i class="fa-solid fa-shop"></i>
           <div>
-            <strong>Studio Address</strong>
-            <span>Your address here</span>
-          </div>
-        </div>
-        <div class="location-item">
-          <i class="fa-solid fa-phone"></i>
-          <div>
-            <strong>Phone / WhatsApp</strong>
-            <span>Your phone number here</span>
+            <strong>Studio Location</strong>
+            <span>North Side Houston</span>
           </div>
         </div>
         <div class="location-item">
           <i class="fa-solid fa-envelope"></i>
           <div>
             <strong>Email</strong>
-            <span>Your email here</span>
+            <span>amusatmalikabidemi@gmail.com</span>
           </div>
         </div>
       </div>
@@ -552,7 +539,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
     <div id="payDetails"></div>
     <div class="pay-modal-note">
       <i class="fa-solid fa-circle-info" style="color:var(--rose)"></i>
-      After payment, please send a screenshot on WhatsApp so we can confirm your booking.
+      After payment, please email <strong>amusatmalikabidemi@gmail.com</strong> with a screenshot so we can confirm your booking.
     </div>
   </div>
 </div>
@@ -564,9 +551,9 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       <div class="booking-text">
         <div class="section-tag">Book an Appointment</div>
         <h2>Skip the Queue — <span>Book Ahead</span></h2>
-        <p>Fill in your details and we'll confirm your slot instantly on WhatsApp. No waiting, no stress.</p>
+        <p>Fill in your details and we'll confirm your slot. No waiting, no stress.</p>
         <ul class="booking-features">
-          <li><i class="fa-solid fa-check-circle"></i> Instant WhatsApp confirmation</li>
+          <li><i class="fa-solid fa-check-circle"></i> Quick booking confirmation</li>
           <li><i class="fa-solid fa-check-circle"></i> Pick your style and time</li>
           <li><i class="fa-solid fa-check-circle"></i> Free reminder before appointment</li>
           <li><i class="fa-solid fa-check-circle"></i> Reschedule anytime, no charge</li>
@@ -651,8 +638,8 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <label>Extra Notes (optional)</label>
           <textarea id="bNotes" placeholder="Any special requests?"></textarea>
         </div>
-        <button class="submit-btn" onclick="bookViaWhatsApp()">
-          <i class="fa-brands fa-whatsapp"></i> Confirm on WhatsApp
+        <button class="submit-btn" onclick="submitBooking()">
+          <i class="fa-solid fa-paper-plane"></i> Submit Booking
         </button>
       </div>
     </div>
@@ -666,9 +653,9 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       <div class="footer-brand">
         <a href="#" class="logo">
           <i class="fa-solid fa-crown"></i>
-          Royal <span>Braids</span>
+          HTX <span>Hairstylist</span>
         </a>
-        <p>Premium women's hair braiding studio. Where every braid is a masterpiece and every client leaves feeling royal.</p>
+        <p>Premium women's hair braiding studio in Houston. Where every braid is a masterpiece and every client leaves feeling royal.</p>
         <div class="social-row">
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -685,21 +672,20 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>Your address here</p>
-        <p>Your phone here</p>
-        <p>Your email here</p>
+        <p>North Side Houston</p>
+        <p>amusatmalikabidemi@gmail.com</p>
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Royal Braids. All rights reserved.
+      © 2026 HTX Hairstylist. All rights reserved.
     </div>
   </div>
 </footer>
 
 <script>
-// ============================================
-// CURRENCY SWITCHER
-// ============================================
+/* ============================================
+   CURRENCY SWITCHER
+   ============================================ */
 const rates = { USD: 1, GBP: 0.79, EUR: 0.92, CAD: 1.34, AUD: 1.50 };
 const symbols = { USD: '$', GBP: '£', EUR: '€', CAD: 'CA$', AUD: 'AU$' };
 let currentCurrency = 'USD';
@@ -719,30 +705,27 @@ function updatePrices(currency){
   document.querySelectorAll('.currency-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.currency === currency);
   });
-  localStorage.setItem('braidsCurrency', currency);
+  localStorage.setItem('htxCurrency', currency);
 }
 
 document.querySelectorAll('.currency-btn').forEach(btn => {
   btn.addEventListener('click', function(){ updatePrices(this.dataset.currency); });
 });
 
-const savedCurrency = localStorage.getItem('braidsCurrency');
+const savedCurrency = localStorage.getItem('htxCurrency');
 if (savedCurrency && rates[savedCurrency]) updatePrices(savedCurrency);
 
-// ============================================
-// MENU + BOOKING
-// ============================================
+/* ============================================
+   MENU + SMOOTH SCROLL
+   ============================================ */
 function toggleMenu(){ document.getElementById('navMenu').classList.toggle('open'); }
 function scrollToBooking(){ document.getElementById('booking').scrollIntoView({behavior:'smooth'}); }
 
-// ============================================================
-// CHANGE THIS to the salon's real WhatsApp number
-// Format: country code + number, no spaces, no +, no brackets
-// Example: 2349047974587
-// ============================================================
-const SALON_WHATSAPP = '10000000000';
-
-function bookViaWhatsApp(){
+/* ============================================
+   BOOKING FORM SUBMIT (no WhatsApp)
+   Shows a confirmation message on the page.
+   ============================================ */
+function submitBooking(){
   const name = document.getElementById('bName').value.trim();
   const phone = document.getElementById('bPhone').value.trim();
   const service = document.getElementById('bService').value;
@@ -755,23 +738,29 @@ function bookViaWhatsApp(){
     return;
   }
 
-  let msg = '💇‍♀️ *NEW BOOKING — Royal Braids Studio*%0A%0A';
-  msg += '👤 *Name:* ' + name + '%0A';
-  msg += '📞 *Phone:* ' + phone + '%0A';
-  msg += '✨ *Style:* ' + service + '%0A';
-  msg += '🕒 *Preferred Time:* ' + time + '%0A';
-  msg += '💳 *Payment Method:* ' + payment + '%0A';
-  if(notes) msg += '📝 *Notes:* ' + notes + '%0A';
-  msg += '%0AThank you! 💕';
+  // Show success message
+  alert(
+    'Booking Submitted!\n\n' +
+    'Name: ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    'Style: ' + service + '\n' +
+    'Time: ' + time + '\n' +
+    'Payment: ' + payment + '\n\n' +
+    'We will contact you shortly at ' + phone + '.'
+  );
 
-  window.open('https://wa.me/' + SALON_WHATSAPP + '?text=' + msg, '_blank');
+  // Reset form
+  document.getElementById('bName').value = '';
+  document.getElementById('bPhone').value = '';
+  document.getElementById('bTime').value = '';
+  document.getElementById('bNotes').value = '';
 }
 
-// ============================================================
-// PAYMENT DETAILS
-// Fill in the real details for each payment method below.
-// Every "value" is currently set to "—" so nothing fake is shown.
-// ============================================================
+/* ============================================
+   PAYMENT MODAL — NO WHATSAPP REDIRECT
+   Just shows the details in a popup.
+   Fill in real details below when available.
+   ============================================ */
 const payInfo = {
   'PayPal': {
     icon: 'fa-brands fa-paypal',
@@ -805,8 +794,7 @@ const payInfo = {
   'Apple Gift Card': {
     icon: 'fa-brands fa-apple',
     details: [
-      { label: 'Send Code On WhatsApp', value: '—' },
-      { label: 'WhatsApp Number', value: '—' }
+      { label: 'Send Code Via Email', value: 'amusatmalikabidemi@gmail.com' }
     ]
   },
   'Venmo': {
@@ -859,10 +847,12 @@ function closePayModal(){
   document.getElementById('payModal').classList.remove('open');
 }
 
+// Close modal when clicking the dark background
 document.getElementById('payModal').addEventListener('click', function(e){
   if(e.target === this) closePayModal();
 });
 
+// Copy to clipboard
 function copyText(text, btn){
   if(navigator.clipboard) {
     navigator.clipboard.writeText(text).then(() => {
@@ -882,6 +872,7 @@ function copyText(text, btn){
   }
 }
 
+// Close mobile menu when a link is tapped
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     document.getElementById('navMenu').classList.remove('open');
