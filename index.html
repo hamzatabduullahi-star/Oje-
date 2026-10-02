@@ -118,6 +118,8 @@ nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
 .location-item i{color:var(--rose);font-size:1.1rem;margin-top:4px}
 .location-item div strong{display:block;font-size:0.95rem;margin-bottom:2px;color:#fff;font-weight:600}
 .location-item div span{font-size:0.85rem;color:var(--muted)}
+.location-item div a{font-size:0.85rem;color:var(--rose);transition:0.3s}
+.location-item div a:hover{color:var(--gold2)}
 
 /* PAYMENT METHODS */
 .payment-section{background:linear-gradient(135deg,#141118,#0d0b10);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -151,6 +153,27 @@ nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
 .copy-btn:hover{background:var(--rose);color:#000}
 .pay-modal-note{margin-top:20px;padding:14px;background:rgba(232,180,184,0.08);border-radius:10px;font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.5}
 
+/* DEPOSIT NOTICE */
+.deposit-banner{
+  max-width:900px;margin:0 auto 40px;
+  background:linear-gradient(135deg,rgba(232,180,184,0.12),rgba(212,162,76,0.08));
+  border:1px solid var(--rose);
+  border-radius:var(--radius);
+  padding:24px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.deposit-banner::before{
+  content:'💵';position:absolute;top:-20px;right:-20px;font-size:120px;opacity:0.06;
+}
+.deposit-banner h3{
+  color:var(--rose);font-size:1.3rem;margin-bottom:8px;font-weight:700;
+  font-family:'Playfair Display',serif;
+}
+.deposit-banner p{color:var(--text);font-size:0.95rem;line-height:1.7}
+.deposit-banner strong{color:var(--gold2);font-size:1.15rem}
+
 /* BOOKING */
 .booking-section{background:linear-gradient(135deg,#141118,#0d0b10);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
@@ -166,8 +189,81 @@ nav a:hover{color:#fff;background:rgba(232,180,184,0.1)}
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;background:#0d0b10;border:1px solid var(--border);border-radius:10px;color:#fff;font-family:inherit;font-size:0.92rem;outline:none;transition:0.3s}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--rose)}
 .form-group textarea{resize:vertical;min-height:70px}
+
+/* SIGNATURE BOX */
+.signature-box{
+  margin-top:6px;
+  padding:14px;
+  background:#0d0b10;
+  border:1.5px dashed var(--rose);
+  border-radius:10px;
+  position:relative;
+}
+.signature-box input{
+  background:transparent !important;
+  border:none !important;
+  font-family:'Playfair Display',serif !important;
+  font-size:1.3rem !important;
+  color:var(--gold2) !important;
+  font-style:italic;
+  padding:6px 0 !important;
+}
+.signature-box input:focus{box-shadow:none !important}
+.signature-line{
+  font-size:0.7rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-top:4px;
+}
+
+/* TERMS CHECK */
+.terms-check{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin:16px 0;
+  padding:14px;
+  background:rgba(232,180,184,0.06);
+  border-radius:10px;
+  border:1px solid var(--border);
+  cursor:pointer;
+}
+.terms-check input[type="checkbox"]{
+  width:20px;height:20px;
+  accent-color:var(--rose);
+  cursor:pointer;
+  margin-top:2px;
+  flex-shrink:0;
+}
+.terms-check span{
+  font-size:0.85rem;
+  color:var(--text);
+  line-height:1.6;
+}
+.terms-check strong{color:var(--gold2)}
+
 .submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,#0084ff,#0066cc);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;transition:0.3s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px}
 .submit-btn:hover{background:linear-gradient(135deg,#0077e6,#0055aa);transform:translateY(-2px)}
+
+/* TELEGRAM BUTTON */
+.telegram-btn{
+  width:100%;
+  padding:15px;
+  background:linear-gradient(135deg,#229ED9,#1a7fae);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.3s;
+  font-family:inherit;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:10px;
+  text-decoration:none;
+}
+.telegram-btn:hover{background:linear-gradient(135deg,#1e8fc4,#156a92);transform:translateY(-2px)}
 
 /* FOOTER */
 footer{padding:50px 0 30px;border-top:1px solid var(--border)}
@@ -210,6 +306,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
   .footer-grid{grid-template-columns:1fr;gap:26px}
   .booking-form{padding:22px}
   .pay-modal-box{padding:24px}
+  .signature-box input{font-size:1.1rem !important}
 }
 </style>
 </head>
@@ -462,6 +559,14 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
             <span>Olabidemk@gmail.com</span>
           </div>
         </div>
+        <div class="location-item">
+          <i class="fa-brands fa-telegram"></i>
+          <div>
+            <strong>Telegram</strong>
+            <span>+234 70 6693 9100</span><br>
+            <a href="https://t.me/htxhairstyle" target="_blank">t.me/htxhairstyle</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -529,7 +634,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
     </div>
     <div class="payment-note">
       <i class="fa-solid fa-lock" style="color:var(--rose)"></i>
-      <strong>Deposit may be required</strong> for some styles to secure your booking.
+      <strong>$50 deposit required</strong> to secure every booking.
     </div>
   </div>
 </section>
@@ -554,14 +659,25 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
 <!-- BOOKING -->
 <section class="section booking-section" id="booking">
   <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Book an Appointment</div>
+      <h2>Skip the Queue — <span>Book Ahead</span></h2>
+      <p>A $50 deposit is required to lock in every appointment.</p>
+    </div>
+
+    <!-- DEPOSIT BANNER -->
+    <div class="deposit-banner">
+      <h3><i class="fa-solid fa-circle-exclamation"></i> $50 Deposit Required</h3>
+      <p>To secure your appointment, a <strong>$50 deposit</strong> must be paid first. The deposit goes toward your final total — it's not an extra charge.</p>
+    </div>
+
     <div class="booking-grid">
       <div class="booking-text">
-        <div class="section-tag">Book an Appointment</div>
-        <h2>Skip the Queue — <span>Book Ahead</span></h2>
-        <p>Fill in your details and it will open your Messages app to send the booking directly to us via iMessage.</p>
+        <h2>Confirm Your <span>Spot</span></h2>
+        <p>Fill in your details, sign below, and we'll receive your booking instantly via iMessage or Telegram.</p>
         <ul class="booking-features">
-          <li><i class="fa-solid fa-check-circle"></i> Sends directly to our iMessage</li>
-          <li><i class="fa-solid fa-check-circle"></i> Pick your style and time</li>
+          <li><i class="fa-solid fa-check-circle"></i> Sends directly to our inbox</li>
+          <li><i class="fa-solid fa-check-circle"></i> $50 deposit required to confirm</li>
           <li><i class="fa-solid fa-check-circle"></i> Free reminder before appointment</li>
           <li><i class="fa-solid fa-check-circle"></i> Reschedule anytime, no charge</li>
         </ul>
@@ -645,9 +761,29 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <label>Extra Notes (optional)</label>
           <textarea id="bNotes" placeholder="Any special requests?"></textarea>
         </div>
+
+        <!-- SIGNATURE -->
+        <div class="form-group">
+          <label>Sign Here (Type Your Full Name)</label>
+          <div class="signature-box">
+            <input type="text" id="bSignature" placeholder="Type your name as signature">
+            <div class="signature-line">Signature</div>
+          </div>
+        </div>
+
+        <!-- TERMS CHECK -->
+        <label class="terms-check">
+          <input type="checkbox" id="bAgree">
+          <span>I agree to pay the <strong>$50 deposit</strong> to confirm my appointment. The deposit goes toward my final total and is required before the booking is locked in.</span>
+        </label>
+
         <button class="submit-btn" onclick="bookViaiMessage()">
           <i class="fa-solid fa-comment-dots"></i> Send Booking via iMessage
         </button>
+
+        <a href="https://t.me/htxhairstyle" target="_blank" class="telegram-btn">
+          <i class="fa-brands fa-telegram"></i> Send Booking via Telegram
+        </a>
       </div>
     </div>
   </div>
@@ -667,7 +803,7 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="mailto:Olabidemk@gmail.com"><i class="fa-solid fa-comment-dots"></i></a>
+          <a href="https://t.me/htxhairstyle" target="_blank"><i class="fa-brands fa-telegram"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -682,6 +818,8 @@ footer{padding:50px 0 30px;border-top:1px solid var(--border)}
         <p>North Side Houston</p>
         <p>amusatmalikabidemi@gmail.com</p>
         <p>iMessage: Olabidemk@gmail.com</p>
+        <p>Telegram: +234 70 6693 9100</p>
+        <a href="https://t.me/htxhairstyle" target="_blank">t.me/htxhairstyle</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -731,8 +869,7 @@ function scrollToBooking(){ document.getElementById('booking').scrollIntoView({b
 
 /* ============================================================
    BOOKING → iMessage
-   Uses the sms: URL scheme which opens Messages app.
-   On iPhone, this will use iMessage for the Apple ID below.
+   Requires signature and $50 deposit agreement.
    ============================================================ */
 const IMESSAGE_ID = 'Olabidemk@gmail.com';
 
@@ -743,9 +880,19 @@ function bookViaiMessage(){
   const time = document.getElementById('bTime').value.trim();
   const payment = document.getElementById('bPayment').value;
   const notes = document.getElementById('bNotes').value.trim();
+  const signature = document.getElementById('bSignature').value.trim();
+  const agreed = document.getElementById('bAgree').checked;
 
   if(!name || !phone || !time){
     alert('Please fill in your name, phone number and preferred time.');
+    return;
+  }
+  if(!signature){
+    alert('Please sign by typing your full name in the signature field.');
+    return;
+  }
+  if(!agreed){
+    alert('Please tick the box to agree to the $50 deposit requirement.');
     return;
   }
 
@@ -756,12 +903,11 @@ function bookViaiMessage(){
   msg += '🕒 Preferred Time: ' + time + '\n';
   msg += '💳 Payment Method: ' + payment + '\n';
   if(notes) msg += '📝 Notes: ' + notes + '\n';
+  msg += '✍️ Signature: ' + signature + '\n';
+  msg += '✅ Agreed to $50 deposit: Yes\n';
   msg += '\nThank you! 💕';
 
-  // Encode the message for SMS/iMessage URL
   const encodedMsg = encodeURIComponent(msg);
-
-  // sms: link — opens Messages app (iMessage on iPhone)
   const smsURL = 'sms:' + IMESSAGE_ID + '&body=' + encodedMsg;
 
   window.location.href = smsURL;
